@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            line-height: 1px;
+        }
+
+        .wrapper {
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        header {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+            header div {
+                width: 31%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                text-align: start;
+                justify-content: space-evenly;
+            }
+
+                header div img {
+                    width: 80%;
+                    height: 80%;
+                }
+
+                header div p {
+                    line-height: 1px;
+                }
+        /* ----------------------------------------------------------------------------------- */
+        .headLink {
+            background-color: rgb(100, 196, 5);
+            width: 100%;
+            height: 90px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .headLink ul {
+                font-size: 20px;
+                width: 50%;
+                height: 100%;
+                list-style: none;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+        .headLinkSearch {
+            width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+            .headLinkSearch div:hover {
+                background-color: gray;
+                transition: 0.5s;
+                cursor: pointer;
+            }
+        /* ----------------------------------------------------------------------------------- */
+        .Products div img {
+            width: 230px;
+            height: 230px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <nav class="headLink">
+            <ul>
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="/">Giới thiệu</a></li>
+                <li>@Html.ActionLink("Xe mới", "Index", new {Controller="Xe"})</li>
+                <li><a href="/">Ve</a></li>
+            </ul>
+            <div class="headLinkSearch">
+                <input style="width: 220px;height: 35px; border: 1px solid rgb(100, 196, 5);border-radius: 5px;" type="text" placeholder=" &nbsp;Search">
+                <div style="border: 1px solid black;width: fit-content;height: fit-content;padding: 7px 15px;">Search</div>
+            </div>
+
+        </nav>
+        <div>@RenderBody()</div>
+    </div>
+
+
+    <script src="/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
