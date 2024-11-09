@@ -1,37 +1,64 @@
-﻿@model List<HeThongQuanLyMuaBanXe.Models.Xe>
-
+﻿
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<table class="table table-bordered">
-    <tr>
-        <th>Mã</th>
-        <th>Tên</th>
-        <th>Hãng</th>
-        <th>Dòng</th>
-        <th>Số khung</th>
-        <th>Số máy</th>
-        <th>Màu sắc</th>
-        <th>Năm sản xuất</th>
-        <th>Giá bán</th>
-        <th>Hình ảnh</th>
-    </tr>
-    @foreach (var xe in Model)
-    {
-        <tr>
-            <td>@Html.DisplayFor(row => xe.MaXe)</td>
-            <td>@Html.DisplayFor(row => xe.TenXe)</td>
-            <td>@Html.DisplayFor(row => xe.HangXe)</td>
-            <td>@Html.DisplayFor(row => xe.DongXe)</td>
-            <td>@Html.DisplayFor(row => xe.SoKhungXe)</td>
-            <td>@Html.DisplayFor(row => xe.SoMayXe)</td>
-            <td>@Html.DisplayFor(row => xe.MauSac)</td>
-            <td>@Html.DisplayFor(row => xe.NamSanXuat)</td>
-            <td>@Html.DisplayFor(row => xe.GiaBanXe) VND</td>
-            <td><img width="100px"src="~/Images/@xe.HinhAnh" /></td>
-        </tr>
-    }
-</table> 
 
+<h2>Danh Sách Sản Phẩm</h2>
+
+@if (ViewBag.AllProducts != null && ViewBag.AllProducts.Count > 0)
+{
+    @*<div class="product-list" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            @foreach (var product in ViewBag.AllProducts)
+            {
+                <div class="product-item" style="flex-basis: calc(100% / 6 - 20px); border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+                    <a href="@Url.Action("ChiTietSanPham", "Home", new { id = product.MaXe })" style="text-decoration: none; color: inherit;">
+                        <img src="~/Images/@product.HinhAnh" alt="@product.TenXe" style="width: 100%; height: 180px; object-fit: cover;">
+                        <div style="padding: 15px;">
+                            <h3 style="font-size: 1.1em; color: #333; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@product.TenXe</h3>
+                            <p style="font-size: 1em; color: #666; margin: 8px 0;">Giá: @String.Format("{0:N0}", product.GiaBanXe) đ</p>
+                            <button style="width: 100%; padding: 10px; background-color:#000000; color: white; border: none; border-radius: 5px; font-size: 1em; cursor: pointer; transition: background-color 0.3s;">
+                                Xem Chi Tiết
+                            </button>
+
+
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>*@
+    <div class="product-list" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        @foreach (var product in ViewBag.AllProducts)
+        {
+            <div class="product-item" style="flex-basis: calc(100% / 6 - 20px); border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+                <a href="@Url.Action("ChiTietSanPham", "Xe", new { id = product.MaXe })" style="text-decoration: none; color: inherit;">
+
+                    <img src="~/Images/@product.HinhAnh" alt="@product.TenXe" style="width: 100%; height: 180px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <h3 style="font-size: 1.1em; color: #333; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@product.TenXe</h3>
+                        <p style="font-size: 1em; color: #666; margin: 8px 0;">Giá: @String.Format("{0:N0}", product.GiaBanXe) đ</p>
+                        <button style="width: 100%; padding: 10px; background-color:#000000; color: white; border: none; border-radius: 5px; font-size: 1em; cursor: pointer; transition: background-color 0.3s;">
+                            Xem Chi Tiết
+                        </button>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+
+
+    <style>
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        .product-item button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+}
+else
+{
+    <p>Không có sản phẩm nào.</p>
+}

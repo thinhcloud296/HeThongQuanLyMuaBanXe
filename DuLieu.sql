@@ -2,85 +2,27 @@
 -- Reset ma ve 0
 --DBCC CHECKIDENT ('Xes', RESEED, 0);
 
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Bugatti Chiron', 'Bugatti', 'Chiron', 'E732EF281C', '7E7512F753', 'Blue', 2023, 3000000, '1.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Lamborghini Aventador', 'Lamborghini', 'Aventador', '4235374AA1', 'BC77FFDE69', 'Yellow', 2022, 500000, '2.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Ferrari LaFerrari', 'Ferrari', 'LaFerrari', 'CCF560277D', '14EE7F9D67', 'Red', 2020, 1400000, '3.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('McLaren P1', 'McLaren', 'P1', '14F9C123C1', 'A5DE8F8836', 'Orange', 2021, 1200000, '4.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Porsche 918 Spyder', 'Porsche', '918 Spyder', 'D58FB58AC9', '79A6FBE893', 'Silver', 2018, 1000000, '5.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Aston Martin Valkyrie', 'Aston Martin', 'Valkyrie', 'ECDEFABC1D', 'AABBCC1234', 'Green', 2023, 2500000, '6.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Koenigsegg Jesko', 'Koenigsegg', 'Jesko', '12AD45E789', 'BB88AA9944', 'White', 2022, 3000000, '7.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Pagani Huayra', 'Pagani', 'Huayra', '7894CCB123', 'DD44AA8822', 'Silver', 2019, 2800000, '8.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Rimac Nevera', 'Rimac', 'Nevera', '23EFDCB441', 'FF1188EE99', 'Blue', 2022, 2400000, '9.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Mercedes-AMG One', 'Mercedes', 'AMG One', '54678FA123', '9988AABB77', 'Black', 2021, 2700000, '10.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Lamborghini Huracán', 'Lamborghini', 'Huracán', '1256DDEE43', '7766553321', 'Red', 2020, 320000, '11.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Bentley Continental GT', 'Bentley', 'Continental GT', '9876AAB122', '1234567890', 'White', 2021, 220000, '12.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Tesla Roadster', 'Tesla', 'Roadster', 'AB12CD34EF', 'AABBCCDDEE', 'Red', 2023, 200000, '13.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Ford GT', 'Ford', 'GT', '1234AAEE56', 'DEADBEEFFE', 'Blue', 2018, 450000, '14.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Maserati MC20', 'Maserati', 'MC20', '44CCBBDD88', 'CC44EE1199', 'Yellow', 2021, 210000, '15.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Rolls-Royce Phantom', 'Rolls-Royce', 'Phantom', 'DDEE112233', 'CCDDEEFF99', 'Black', 2020, 450000, '16.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Aston Martin DB11', 'Aston Martin', 'DB11', 'EE1122DDBB', 'BBEE445566', 'Gray', 2019, 205000, '17.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Jaguar F-Type', 'Jaguar', 'F-Type', '98AA45CC22', 'EE77FFCC33', 'Silver', 2022, 120000, '18.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Ferrari F8 Tributo', 'Ferrari', 'F8 Tributo', 'CCDDEE1298', '1234AAEE99', 'Red', 2023, 280000, '19.jpg');
-
-INSERT INTO [dbo].[Xes] ([TenXe], [HangXe], [DongXe], [SoKhungXe], [SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh])
-VALUES ('Lamborghini Urus', 'Lamborghini', 'Urus', 'AACD334488', '99FF1122DD', 'Black', 2021, 220000, '20.jpg');
-
-
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 72000000000 WHERE [TenXe] = 'Bugatti Chiron';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 12000000000 WHERE [TenXe] = 'Lamborghini Aventador';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 33600000000 WHERE [TenXe] = 'Ferrari LaFerrari';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 28800000000 WHERE [TenXe] = 'McLaren P1';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 24000000000 WHERE [TenXe] = 'Porsche 918 Spyder';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 28000000000 WHERE [TenXe] = 'Koenigsegg Agera RS';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 32000000000 WHERE [TenXe] = 'Aston Martin Valkyrie';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 15000000000 WHERE [TenXe] = 'Mercedes-AMG One';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 25000000000 WHERE [TenXe] = 'Pagani Huayra BC';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 21000000000 WHERE [TenXe] = 'Lamborghini Sián FKP 37';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 27000000000 WHERE [TenXe] = 'Ferrari SF90 Stradale';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 11000000000 WHERE [TenXe] = 'Ford GT';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 9500000000 WHERE [TenXe] = 'Chevrolet Corvette ZR1';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 8000000000 WHERE [TenXe] = 'Nissan GT-R Nismo';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 15000000000 WHERE [TenXe] = 'Bentley Continental GT';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 13000000000 WHERE [TenXe] = 'Rolls-Royce Wraith';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 28000000000 WHERE [TenXe] = 'McLaren Speedtail';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 23000000000 WHERE [TenXe] = 'Bugatti Veyron';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 30000000000 WHERE [TenXe] = 'Ferrari Monza SP2';
-UPDATE [dbo].[Xes] SET [GiaBanXe] = 19000000000 WHERE [TenXe] = 'Lamborghini Huracán STO';
+INSERT [dbo].[NhaCungCaps] ( [TenNhaCungCap], [DiaChiNhaCungCap], [SoDienThoaiNhaCungCap], [EmailNhaCungCap]) VALUES ( N'Mercedes-Benz', N'811 Nguyễn Văn Linh, quận 7,TP. Hồ Chí Minh', N'0123456789', N'mercedesq7@gmail.com')
+INSERT [dbo].[NhaCungCaps] ( [TenNhaCungCap], [DiaChiNhaCungCap], [SoDienThoaiNhaCungCap], [EmailNhaCungCap]) VALUES ( N'August Luxury Motorcars', N'3510 Spectrum Court - Kelowna, BC V1V 2Z1', N'250-860-0444', N'augustlm@gmail.com')
+INSERT [dbo].[NhaCungCaps] ( [TenNhaCungCap], [DiaChiNhaCungCap], [SoDienThoaiNhaCungCap], [EmailNhaCungCap]) VALUES ( N'Ferrari ViệtNam', N'D7,Tân Thuận,Q7,TpHCM,VietNam', N'84 283 622 0770', N'ferrarivn@gmail.com')
+INSERT [dbo].[NhaCungCaps] ( [TenNhaCungCap], [DiaChiNhaCungCap], [SoDienThoaiNhaCungCap], [EmailNhaCungCap]) VALUES ( N'Lamborghini Hồ Chí Minh', N'Ks.Hilton,11Công Trường Mê Kinh, Q1,TpHCM,Vietnam', N'84 859 180 088', N'lamborghinivnn@gmail.com')
+GO
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'Ford GT Heritage Edition', N'Ford', N'Hypercar', N'fo001',N'fo001', N'Trắng', 2021, CAST(1436462 AS Decimal(20, 0)), N'fordgt.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'2024 Lamborghini Urus', N'Lamborghini', N'SUV', N'la002',N'la002', N'Vàng', 2024, CAST(241843 AS Decimal(20, 0)), N'renazzo-lamborghini-urus-performante-unveiled-thailand-motor-expo-2022-7-16699859694741013805461-crop-16699861242161368888932.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'2022 Lamborghini Aventador SVJ ', N'Lamborghini', N'Supercar', N'la003', N'la003', N'Vàng', 2022, CAST(562000 AS Decimal(20, 0)), N'New-2020-Lamborghini-Aventador-SVJ-Roadster-1597949125 (1).jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'2022 Lamborghini Revuelto', N'Lamborghini', N'Supercar', N'la004', N'la004', N'Xanh', 2024, CAST(574495 AS Decimal(20, 0)), N'2024-lamborghini-revuelto-review.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'Pagani Huayra', N'Pagani', N'Hypercar', N'pa001', N'pa001', N'Xám', 2014, CAST(4000125 AS Decimal(20, 0)), N'640-sieu-xe-Pagani-Huayra-BC.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'Ferrari SF90 Stradale', N'Ferrari', N'Supercar', N'fe001', N'fe001', N'Đỏ', 2021, CAST(464900 AS Decimal(20, 0)), N'sf90.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES (N' 2024 Lamborghini Huracán Tecnica', N'Lamborghini', N'Supercar', N'la001', N'la001', N'Đen', 2020, CAST(248995 AS Decimal(20, 0)), N'Screenshot 2024-11-07 211457.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES (N'Audi R8 V10 Performance', N'Audi', N'Supercar', N'ad001', N'ad001', N'Trắng', 2022, CAST(193492 AS Decimal(20, 0)), N'audiR8.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES (N'Chevrolet Corvette', N'Chevrolet', N'Supercar', N'cv001', N'cv001', N'Trắng', 2021, CAST(89907 AS Decimal(20, 0)), N'corvette.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'Mercedes-Benz AMG® G 63', N'Mercedes-Benz', N'SUV', N'mc001', N'mc001', N'Trắng', 2022, CAST(162379 AS Decimal(20, 0)), N'g63.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'Rolls-Royce Cullinan', N'Rolls-Royce', N'SUV', N'rr001', N'mc001', N'Đen', 2024, CAST(524575 AS Decimal(20, 0)), N'xehay-Rolls-Royce-Cullinan-review-270120 (4) (1).jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'Mercedes-Maybach S-Class', N'Mercedes-Benz', N'Luxury', N'mc002', N'mc001', N'Đen', 2025, CAST(270400 AS Decimal(20, 0)), N'mayback.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'2025 Rolls Royce Ghost', N'Rolls-Royce', N'Luxury', N'rr002', N'mc001', N'Tím', 2025, CAST(264575 AS Decimal(20, 0)), N'Screenshot 2024-11-07 220012.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES (N'2023 Ferrari 812 GTS', N'Ferrari', N'Supercar', N'fe002', N'mc001', N'Đỏ', 2023, CAST(378995 AS Decimal(20, 0)), N'Screenshot 2024-11-07 212609.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'2023 Ferrari 296 GTS', N'Ferrari', N'Supercar', N'fe004', N'mc001', N'Xanh', 2023, CAST(279995 AS Decimal(20, 0)), N'Screenshot 2024-11-07 213142.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'2024 Ferrari Purosangue', N'Ferrari', N'SUV', N'fe003', N'mc001', N'Đỏ', 2024, CAST(439995 AS Decimal(20, 0)), N'Screenshot 2024-11-07 212831.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES (N'2023 Maserati GranCabrio', N'Maserati', N'Supercar', N'mc001', N'mc001', N'Xanh', 2023, CAST(203000 AS Decimal(20, 0)), N'hq720.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'2024 Ferrari MC20', N'Maserati', N'Supercar', N'mc002', N'mc001', N'Trắng', 2024, CAST(243095 AS Decimal(20, 0)), N'mc20-hero.jpg')
+INSERT [dbo].[Xes] ( [TenXe], [HangXe], [DongXe], [SoKhungXe],[SoMayXe], [MauSac], [NamSanXuat], [GiaBanXe], [HinhAnh]) VALUES ( N'2024 Maserati Levante Trofeo', N'Maserati', N'SUV', N'mc003', N'mc001', N'Trắng', 2024, CAST(839995 AS Decimal(20, 0)), N'ea047f6136a932aceb21459f111aa058.jpg')

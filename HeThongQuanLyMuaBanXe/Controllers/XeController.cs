@@ -13,8 +13,20 @@ namespace HeThongQuanLyMuaBanXe.Controllers
         public ActionResult Index()
         {
             CompanyDbContext db = new CompanyDbContext();
-            List<Xe> dsXe = db.Xes.ToList();
-            return View(dsXe);
+            List<Xe> allProducts = db.Xes.ToList();
+            ViewBag.AllProducts = allProducts;
+            return View();
+        }
+        public ActionResult ChiTietSanPham(int id)
+        {
+            CompanyDbContext db = new CompanyDbContext();
+            Xe xeChiTiet = db.Xes.FirstOrDefault(x => x.MaXe == id);
+            if (xeChiTiet == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(xeChiTiet);
         }
     }
 }
