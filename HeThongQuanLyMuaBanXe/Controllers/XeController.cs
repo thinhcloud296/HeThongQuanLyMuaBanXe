@@ -17,7 +17,7 @@ namespace HeThongQuanLyMuaBanXe.Controllers
             ViewBag.AllProducts = allProducts;
             return View();
         }
-        public ActionResult ChiTietSanPham(int id)
+        public ActionResult ChiTietSanPham(int? id)
         {
             CompanyDbContext db = new CompanyDbContext();
             Xe xeChiTiet = db.Xes.FirstOrDefault(x => x.MaXe == id);
@@ -25,7 +25,6 @@ namespace HeThongQuanLyMuaBanXe.Controllers
             {
                 return HttpNotFound();
             }
-
             return View(xeChiTiet);
         }
     }

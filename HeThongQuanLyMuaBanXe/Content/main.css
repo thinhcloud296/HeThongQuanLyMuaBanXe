@@ -1,11 +1,8 @@
-﻿* {
+﻿
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
-    font-family: 'Questrial', sans-serif;
 }
 
 :root {
@@ -13,25 +10,43 @@ html {
     --Hover-icon: #FF9B42;
 }
 
+/* Tùy chỉnh thanh cuộn tổng thể */
+::-webkit-scrollbar {
+    width: 10px; 
+    height: 12px; 
+}
+
+/* Tùy chỉnh track của thanh cuộn (khu vực mà thumb di chuyển trên đó) */
+::-webkit-scrollbar-track {
+    background-color: lightgray; 
+    border-radius: 20px; 
+}
+
+/* Tùy chỉnh thumb của thanh cuộn (phần có thể kéo được) */
+::-webkit-scrollbar-thumb {
+    background-color: dimgrey; 
+    border-radius: 10px; 
+}
+
+    /* Tùy chỉnh thumb khi hover chuột */
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: darkslategrey; 
+    }
+
+
 /* Phần hearder  */
 .header {
     width: 100%;
-    /* height: 30.594px; */
-    padding: 20px 0;
-    /* background-color: aqua; */
-    /* position: relative; */
-    /* position: fixed;
-    z-index: 1; */
 }
-
     .header .content {
+        background-color:black;
         width: 100%;
-        height: 30.594px;
-        padding: 0 30px 0 30px;
+        height: fit-content;
+        padding: 0px 10px;
         display: flex;
+        justify-content: space-between;
         align-items: center;
     }
-
     .header .box-menu {
         width: 38%;
     }
@@ -50,14 +65,14 @@ html {
 .fa-solid {
     font-size: 14px;
     margin-left: 5px;
-    color: var(--color-text);
+    color: lightgrey;
     transition: 0.4s;
 }
 
 .box-menu .all-list-menu li a {
     text-decoration: none;
     font-size: 20px;
-    color: var(--color-text);
+    color: lightgrey;
     font-weight: bold;
     padding: 0 0 5px 0;
     transition: 0.4s;
@@ -90,26 +105,23 @@ html {
 
 /* logo website */
 .box-logo {
-    width: 23%;
-    padding: 0 15px 0 15px;
+    width: 15%;
+    height:100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .logo img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 180px;
-    height: 70px;
+    width: 100%;
+    height: 100%;
 }
 
 /* Icon web */
 .box-icon {
-    width: 39%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    padding-left:400px;
 }
 
     .box-icon a {
@@ -124,21 +136,25 @@ html {
 .search {
     font-size: 20px;
     transition: 1s;
+    color: lightgrey;
 }
 
 .user {
     font-size: 20px;
     transition: 1s;
+    color: lightgrey;
 }
 
 .heart {
     font-size: 20px;
     transition: 1s;
+    color: lightgrey;
 }
 
 .cart {
     font-size: 20px;
     transition: 1s;
+    color: lightgrey;
 }
 
     .search:hover, .user:hover, .heart:hover, .cart:hover {
@@ -149,12 +165,10 @@ html {
 
 /* phần slide */
 .banner {
-    position: relative;
     width: 100%;
     height: 850px;
-    margin-bottom: 60px;
     overflow: hidden; /* Đảm bảo ảnh không vượt quá khung chứa */
-    bottom:-18px;
+    bottom: -18px;
 }
 
     .banner img {
@@ -378,9 +392,7 @@ html {
     width: 100%;
     min-height: 537.188px;
     padding: 100px 15px;
-    /* background-color: #FF9B42; */
     background-color: #d9d9d9;
-    /*margin-bottom: 80px;*/
 }
 
     .setion-shop .box-title {
@@ -397,7 +409,6 @@ html {
 .box-product {
     width: 177px;
     height: 250px;
-    /* background-color: blueviolet; */
     position: relative;
     overflow: hidden;
 }
@@ -431,7 +442,6 @@ html {
 
     .box-product:hover img {
         border-radius: 30px;
-        /* transform: scale(1.1, 1.1); */
     }
 
     .box-product a {
@@ -451,23 +461,18 @@ html {
     width: 100%;
     min-height: 647.391px;
     padding: 0 15px;
-    /*margin-bottom: 40px;*/
     background-color: #d9d9d9;
-    /*bottom: 80px;*/
-    /*position: relative;*/
 }
 
     .box-product-sell .box-product-sell-2 {
         width: 100%;
         height: 100%;
         padding: 0 15px;
-        /* background-color: aqua; */
     }
 
 .box-product-sell-2 .in-title {
     width: 100%;
     height: 57px;
-    /* background-color: bisque; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -533,11 +538,8 @@ html {
 }
 
 .box-product-sell-2 .new-product {
-    /* width: 424px; */
     width: 394px;
     height: 511.594px;
-    /* padding: 0 15px; */
-    /* background-color: aqua; */
 }
 
 .new-product .new-img-product {
@@ -738,7 +740,6 @@ html {
     width: 100%;
     height: 699px;
     padding: 55px 15px 15px 15px;
-    /*margin-bottom: 80px;*/
     background-image: url(/Images/footer.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -747,7 +748,6 @@ html {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    /*bottom: 120px;*/
 }
 
     .box-bg .box-img {
@@ -755,7 +755,6 @@ html {
         height: 629px;
         position: absolute;
         right: 60px;
-        /* background-color: black; */
     }
 
         .box-bg .box-img .pic-chair {
@@ -795,7 +794,6 @@ html {
 .box-bg .box-content {
     width: 100%;
     height: 100%;
-    /* background-color: #5E2BFF; */
     padding: 0 15px;
     justify-content: center;
     display: flex;
@@ -875,7 +873,6 @@ html {
     height: 591px;
     padding: 0 15px;
     margin-bottom: 80px;
-    /* background-color: #FF4365; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -885,7 +882,6 @@ html {
         width: 635px;
         height: 591px;
         padding: 0 15px;
-        /* background-color: #5E2BFF; */
     }
 
 .box-first-banner .box-img-banner {
@@ -944,7 +940,6 @@ html {
         bottom: 0;
         background-color: var(--Hover-icon);
         transition: all 0.4s ease-in;
-        /* transition-delay: 0.8s; */
     }
 
     .title-in-banner a:hover::after {
@@ -955,18 +950,15 @@ html {
     width: 100%;
     height: 182px;
     padding: 0 15px;
-    /* background-color: #FCAD02; */
     border-top: 1px solid rgb(204, 202, 202);
 }
 
     .box-brand .in-brand {
         width: 100%;
         height: 100%;
-        /* background-color: #5E2BFF; */
         padding: 0 15px;
         display: flex;
         justify-content: center;
-        /* justify-content: space-between; */
         gap: 20px;
         flex-wrap: wrap;
     }
@@ -986,8 +978,6 @@ html {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    /*bottom: 280px;*/
-    /*position: relative;*/
 }
 
 .contact {
@@ -1052,7 +1042,6 @@ html {
         }
 
 .icon-contact li {
-    /* margin: 0 10px; */
     list-style: none;
     display: inline-block;
     transition: 0.4s;
@@ -1077,39 +1066,6 @@ html {
 .icon-contact ul li:last-child {
     margin-left: 10px;
 }
-
-/* .box-second-footer {
-    width: 100%;
-    height: 72px;
-    padding: 10px 15px;
-    background-color: #F6F6F6;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    bottom: 280px;
-    position: relative;
-}
-
-.box-second-footer .first-box, .box-second-footer .second-box {
-    width: 635.500px;
-    height: 52px;
-    padding: 10px 15px;
-    /* background-color: #5E2BFF; 
-    line-height: 2.5;
-}
-
-.box-second-footer .first-box .title {
-    font-size: 14px;
-    color: var(--color-text);
-    display: flex;
-    justify-content: flex-start;
-}
-
-.second-box .box-bank {
-    display: flex;
-    justify-content: flex-end;
-}  */
-
 .box-second-footer {
     width: 100%;
     padding: 10px 15px;
@@ -1140,19 +1096,16 @@ html {
 .footer {
     width: 100%;
     height: 100px;
-    /*padding: 55px 15px 15px 15px;
-    margin-bottom: 80px;*/
     background-image: url('/Images/Screenshot 2024-11-03 083812.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    /*position: relative;*/
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    /*bottom: 200px;*/
     object-fit: cover;
-}/*Phần Footer*/
+}
+/*Phần Footer*/
 
 .footer {
     background-color: #f1f1f1;

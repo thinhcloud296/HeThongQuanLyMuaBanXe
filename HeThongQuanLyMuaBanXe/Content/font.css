@@ -1,0 +1,9 @@
+﻿@font-face {
+    font-family: "Mercedes Benz";
+    src: url("~/Font/Mercedes Benz.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: "Mercedes Benz", serif;
+}

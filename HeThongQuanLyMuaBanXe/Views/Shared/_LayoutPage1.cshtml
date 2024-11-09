@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <link rel="stylesheet" href="~/Content/main.css?v=1.2" type="text/css">
+    <link rel="stylesheet" href="~/Content/font.css" />
+    <link rel="stylesheet" href="~/Content/main.css?v=1.4" type="text/css">
     <link rel="stylesheet" href="~/Content/main-mobile.css" type="text/css">
     <link rel="stylesheet" href="~/Content/shop.css" type="text/css">
     <link rel="stylesheet" href="~/Content/about.css" type="text/css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
     <title>@ViewBag.Title</title>
 </head>
 
@@ -17,7 +20,7 @@
     <div class="header">
         <div class="content">
             <nav class="box-menu">
-                <ul class="all-list-menu">
+                <ul style="margin:0;" class="all-list-menu">
                     <li>
                         <a href="/home/index" class="hover-a" style="font-weight: bold">TRANG CHỦ</a>
                     </li>
@@ -39,13 +42,6 @@
             </div>
 
             <div class="box-icon">
-                @*<div class="box-search" style="display: flex; align-items: center; width: 300px; height: 50px; padding: 10px; border: 1px solid #ccc; border-radius: 25px;">
-                        <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Search" style="flex: 1; height: 100%; padding: 10px; font-size: 16px;">
-                        <button style="border: none; background: transparent; cursor: pointer; height: 100%;">
-                            <i class="fa-solid fa-magnifying-glass" style="font-size: 20px;"></i>
-                        </button>
-                    </div>*@
-
                 <div class="box-heart" style="margin-left: 80px; margin-top: 15px">
                     <a href="">
                         <i class="fa-regular fa-heart heart"></i>
@@ -65,183 +61,109 @@
                 </div>
             </div>
         </div>
-        @*<div class="banner">
-                    <img id="pic" src="~/Images/August-Motorcars-Supercar-Showroom.jpg" alt="">
-                    <div class="in-content">
-                        <div class="tran-box">
-                            <div class="title">Design for life</div>
-                            <div class="text-title">Say hello to our brand new arrivals.</div>
-                            <div class="all-button">
-                                <button>Shop all new in</button>
-                            </div>
-                        </div>
-                        <button id="left"><i class="fa-solid fa-arrow-left"></i></button>
-                        <button id="right"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
-                    <div id="list">
-                        <ul>
-                            <li><button onclick="indexNumber(0)"></button></li>
-                            <li><button onclick="indexNumber(1)"></button></li>
-                            <li><button onclick="indexNumber(2)"></button></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>*@
 
+        @RenderSection("Banner", required: false)
 
-        <div class="banner">
-            <img id="pic" src="~/Images/August-Motorcars-Supercar-Showroom.jpg" alt="">
-            <div class="in-content">
-                <div class="tran-box">
-                    <div class="title">Design for life</div>
-                    <div class="text-title">Say hello to our brand new arrivals.</div>
-                    <div class="all-button">
-                        <button>Shop all new in</button>
-                    </div>
-                </div>
-                <button id="left" onclick="changeSlide(-1)"><i class="fa-solid fa-arrow-left"></i></button>
-                <button id="right" onclick="changeSlide(1)"><i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-            <div id="list">
-                <ul>
-                    <li><button onclick="indexNumber(0)"></button></li>
-                    <li><button onclick="indexNumber(1)"></button></li>
-                    <li><button onclick="indexNumber(2)"></button></li>
-                </ul>
+        <script src="~/Scripts/script.js"></script>
+
+    </div>
+
+    <!-- Phần main -->
+    @RenderBody()
+    <!-- Kết thúc main -->
+    <!-- Phần footer -->
+    <div id="footer" class="footer">
+        <div class="footer-slideshow">
+            <div id="footer-images">
+
+                <img src="~/Images/Screenshot 2024-11-03 083812.jpg" alt="">
+                <img src="~/Images/Screenshot 2024-11-03 083812.jpg" alt="">
+
+                <img src="~/Images/Screenshot 2024-11-03 083812.jpg" alt="">
+
+                <img src="~/Images/Screenshot 2024-11-03 083812.jpg" alt="">
+
             </div>
         </div>
-
-        <script src="~/Content/script.js"></script>
-
-
-
-
-
-        <!-- Phần main -->
-        @RenderBody()
-        <!-- Kết thúc main -->
-        <!-- Phần footer -->
-        <div id="footer" class="footer">
-            <div class="footer-slideshow">
-                <div id="footer-images">
-
-                    <img src="~/Images/Screenshot 2024-11-03 083812.jpg" alt="">
-                    <img src="~/Images/Screenshot 2024-11-03 083812.jpg" alt="">
-
-                    <img src="~/Images/Screenshot 2024-11-03 083812.jpg" alt="">
-
-                    <img src="~/Images/Screenshot 2024-11-03 083812.jpg" alt="">
-
-                </div>
+    </div>
+    <div class="box-first-footer">
+        <div class="contact">
+            <h2>GIỚI THIỆU</h2>
+            <div class="in">
+                <div>Chi nhánh 1: 140 Lê Trọng Tấn,Quận Tân Phú,Tp HCM</div>
+                <div>Chi nhánh 2: 239 Đồng Khởi, Bến Nghé, Quận 1, TpHCM</div>
+                <div>SDT:0833999999 || 0868686869</div>
+                <div>Email:Luxuxycar24@gmail.com</div>
             </div>
         </div>
-        <div class="box-first-footer">
-            <div class="contact">
-                <h2>GIỚI THIỆU</h2>
-                <div class="in">
-                    <div>Chi nhánh 1: 140 Lê Trọng Tấn,Quận Tân Phú,Tp HCM</div>
-                    <div>Chi nhánh 2: 239 Đồng Khởi, Bến Nghé, Quận 1, TpHCM</div>
-                    <div>SDT:0833999999 || 0868686869</div>
-                    <div>Email:Luxuxycar24@gmail.com</div>
-                </div>
-            </div>
-            <!-- <div class="contact">
-                <h2>CATEGOIRES</h2>
-                <div class="in">
-                    <a href="">
-                        <div>Furniture</div>
-                    </a>
-                    <a href="">
-                        <div>Tables</div>
-                    </a>
-                    <a href="">
-                        <div>Seating</div>
-                    </a>
-                    <a href="">
-                        <div>Desks & office </div>
-                    </a>
-                    <a href="">
-                        <div>Storage</div>
-                    </a>
-                    <a href="">
-                        <div>Bed & Bath</div>
-                    </a>
-                </div>
-            </div> -->
-            <div class="contact">
-                <h2>DỊCH VỤ</h2>
-                <div class="in">
-                    <a href="">
-                        <div>Nhận đặt hàng</div>
-                    </a>
-                    <a href="">
-                        <div>Vận chuyển</div>
-                    </a>
-                    <a href="">
-                        <div>Bảo trì || Bảo hành</div>
-                    </a>
-                    <a href="">
-                        <div>Bảo hiểm</div>
-                    </a>
+        <div class="contact">
+            <h2>DỊCH VỤ</h2>
+            <div class="in">
+                <a href="">
+                    <div>Nhận đặt hàng</div>
+                </a>
+                <a href="">
+                    <div>Vận chuyển</div>
+                </a>
+                <a href="">
+                    <div>Bảo trì || Bảo hành</div>
+                </a>
+                <a href="">
+                    <div>Bảo hiểm</div>
+                </a>
 
-                </div>
             </div>
-            <div class="contact">
-                <h2>ĐĂNG KÝ</h2>
-                <div class="in">
-                    <div style="margin-bottom: 25px;">
-                        Nhập email của bạn vào bên dưới dể là
-                        <br>
-                        người đầu tiên biết về các bộ sưu tập và ra mắt xe mới
-                    </div>
-                    <div class="box-email">
-                        <input type="text" placeholder="Email adress...">
-                        <button type="submit">
-                            <i class="fa-solid fa-envelope"></i>
-                        </button>
-                    </div>
-                    <div class="icon-contact">
-                        <ul>
-                            <li>
-                                <a href="">
-                                    <i class="fa-brands fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <i class="fa-brands fa-dribbble"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <i class="fa-brands fa-behance"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+        </div>
+        <div class="contact">
+            <h2>ĐĂNG KÝ</h2>
+            <div class="in">
+                <div style="margin-bottom: 25px;">
+                    Nhập email của bạn vào bên dưới dể là
+                    <br>
+                    người đầu tiên biết về các bộ sưu tập và ra mắt xe mới
+                </div>
+                <div class="box-email">
+                    <input type="text" placeholder="Email adress...">
+                    <button type="submit">
+                        <i class="fa-solid fa-envelope"></i>
+                    </button>
+                </div>
+                <div class="icon-contact">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa-brands fa-dribbble"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa-brands fa-behance"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="box-second-footer">
-            <div class="first-box">
-                <div class="title">
-                    Copyright © 2022. All Right Reserved
-                </div>
+    </div>
+    <div class="box-second-footer">
+        <div class="first-box">
+            <div class="title">
+                Copyright © 2022. All Right Reserved
             </div>
-            <!-- <div class="second-box">
-                 <div class="box-bank">
-                    <img src="Picture/payments-1.jpg" alt="">
-                </div>
-            </div> -->
         </div>
-        <!-- <div style="margin-bottom: -100px;"></div> -->
+    </div>
+    <script src="https://kit.fontawesome.com/eda05fcf5c.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 
-        <script src="https://kit.fontawesome.com/eda05fcf5c.js" crossorigin="anonymous"></script>
-        <script src="js/main.js"></script>
 </body>
 </html>

@@ -4,8 +4,32 @@
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
+@section Banner{
+    <div class="banner">
+        <img id="pic" src="~/Images/August-Motorcars-Supercar-Showroom.jpg" alt="">
+        <div class="in-content">
+            <div class="tran-box">
+                <div class="title">Design for life</div>
+                <div class="text-title">Say hello to our brand new arrivals.</div>
+                <div class="all-button">
+                    <button>Shop all new in</button>
+                </div>
+            </div>
+            <button id="left" onclick="changeSlide(-1)"><i class="fa-solid fa-arrow-left"></i></button>
+            <button id="right" onclick="changeSlide(1)"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div id="list">
+            <ul>
+                <li><button onclick="indexNumber(0)"></button></li>
+                <li><button onclick="indexNumber(1)"></button></li>
+                <li><button onclick="indexNumber(2)"></button></li>
+            </ul>
+        </div>
+    </div>
+    }
 
-<div class="box-room" id="box-room">
+
+<div class="box-room pt-5" id="box-room">
     <a href="/home/index?HangXe=Lamborghini#box-room">
         <div class="living-room">
 
@@ -41,7 +65,7 @@
                 @foreach (var row in @ViewBag.dsXeTheoHang)
                 {
                     <div class="new-product">
-                        <a href="@Url.Action("Details", "Home", new { id = row.MaXe })" style="text-decoration: none;">
+                        <a href="@Url.Action("ChiTietSanPham", "Xe", new { id = row.MaXe })" style="text-decoration: none;">
                             <div class="new-img-product">
                                 <img style="object-position: 0px;" id="Pic-3" src="~/Images/@row.HinhAnh" alt="@row.TenXe">
                                 <div class="note-notif">
@@ -121,7 +145,7 @@
                     @foreach (var row in @ViewBag.dsXeTheoDong)
                     {
                         <div class="new-product">
-                            <a href="@Url.Action("ChiTietSanPham", "Home", new { maXe = row.MaXe })" style="text-decoration: none;">
+                            <a href="@Url.Action("ChiTietSanPham", "Xe", new { id = row.MaXe })" style="text-decoration: none;">
                                 <div class="new-img-product">
                                     <img style="object-position: 0px;" id="Pic-3" src="~/Images/@row.HinhAnh" alt="@row.TenXe">
                                     <div class="note-notif">
