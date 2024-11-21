@@ -12,44 +12,44 @@
 
 /* Tùy chỉnh thanh cuộn tổng thể */
 ::-webkit-scrollbar {
-    width: 10px; 
-    height: 12px; 
+    width: 10px;
+    height: 12px;
 }
 
 /* Tùy chỉnh track của thanh cuộn (khu vực mà thumb di chuyển trên đó) */
 ::-webkit-scrollbar-track {
-    background-color: lightgray; 
-    border-radius: 20px; 
+    background-color: lightgray;
+    border-radius: 20px;
 }
 
 /* Tùy chỉnh thumb của thanh cuộn (phần có thể kéo được) */
 ::-webkit-scrollbar-thumb {
-    background-color: dimgrey; 
-    border-radius: 10px; 
+    background-color: dimgrey;
+    border-radius: 10px;
 }
 
     /* Tùy chỉnh thumb khi hover chuột */
     ::-webkit-scrollbar-thumb:hover {
-        background-color: darkslategrey; 
+        background-color: darkslategrey;
     }
 
 
 /* Phần hearder  */
-.header {
-    width: 100%;
+
+.header .content {
+    background-color: black;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+    max-height: 80px;
 }
-    .header .content {
-        background-color:black;
-        width: 100%;
-        height: fit-content;
-        padding: 0px 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .header .box-menu {
-        width: 38%;
-    }
+
+.header .box-menu {
+    position: absolute;
+    left: 3px;
+}
 
 .box-menu .all-list-menu li {
     display: inline-block;
@@ -71,7 +71,6 @@
 
 .box-menu .all-list-menu li a {
     text-decoration: none;
-    font-size: 20px;
     color: lightgrey;
     font-weight: bold;
     padding: 0 0 5px 0;
@@ -103,25 +102,12 @@
     color: var(--Hover-icon);
 }
 
-/* logo website */
-.box-logo {
-    width: 15%;
-    height:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo img {
-    width: 100%;
-    height: 100%;
-}
-
 /* Icon web */
 .box-icon {
     display: flex;
     justify-content: center;
-    padding-left:400px;
+    position: absolute;
+    right: 2px;
 }
 
     .box-icon a {
@@ -139,28 +125,165 @@
     color: lightgrey;
 }
 
-.user {
+.user, .heart, .cart {
     font-size: 20px;
     transition: 1s;
     color: lightgrey;
 }
 
-.heart {
-    font-size: 20px;
-    transition: 1s;
-    color: lightgrey;
-}
-
-.cart {
-    font-size: 20px;
-    transition: 1s;
-    color: lightgrey;
-}
 
     .search:hover, .user:hover, .heart:hover, .cart:hover {
         color: var(--Hover-icon);
         transform: translateY(-6px);
     }
+/* Menu */
+/* CSS cho Navbar Burger */
+.navbar-burger {
+    cursor: pointer;
+}
+
+    .navbar-burger img {
+        width: 30px;
+        height: 30px;
+    }
+
+/* Menu */
+.menu {
+    position: fixed;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.3);
+    padding: 20px 0;
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    padding: 20px;
+    width: 200px;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+body.open .menu {
+    transform: translateX(0); /* Di chuyển menu vào màn hình */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Liên kết trong menu */
+
+.menu > a {
+    color: #f9f9f9;
+    font-size: 32px;
+    font-family: "Euclid Circular A";
+    text-decoration: none;
+}
+
+body.open .menu > a {
+    animation: appear 0.3s both;
+}
+
+/* Tạo hiệu ứng underline cho link trong menu */
+.menu a::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: var(--Hover-icon); /* Đổi màu theo biến hover-icon */
+    left: 0;
+    bottom: 0;
+    transition: all 0.4s ease-in-out;
+}
+/* Tạo hiệu ứng underline cho link trong menu khi bấm */
+.menu a::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: var(--Hover-icon); /* Đổi màu theo biến hover-icon */
+    left: 0;
+    bottom: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Đổi màu của chữ khi bấm vào */
+.menu a:active {
+    color: var(--Hover-icon);
+}
+
+    /* Nếu có phần tử .angle-down trong <a>, thay đổi màu khi bấm vào */
+    .menu a:active .angle-down {
+        color: var(--Hover-icon);
+    }
+/* Định dạng ban đầu của .navbar-burger */
+.navbar-burger {
+    cursor: pointer;
+    z-index: 20;
+    transition: transform 0.3s ease;
+}
+
+    /* Định dạng cho hình ảnh bên trong burger */
+    .navbar-burger img {
+        z-index: 3;
+        display: grid;
+        place-items: center;
+        position: absolute;
+        left: 5px;
+        top: 23.5px;
+        width: 30px;
+        height: 30px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Khi class 'open' được thêm vào (tức là khi menu mở), hình ảnh burger sẽ xoay thành dấu 'X' */
+    .navbar-burger.open img {
+        transform: rotate(90deg); /* Xoay 90 độ khi mở */
+    }
+
+/* Ẩn menu ban đầu, khi mở thì menu sẽ hiện */
+
+.menu.open {
+    display: flex;
+}
+
+/* Các liên kết trong menu */
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+    .menu a:hover {
+        background-color: #444;
+    }
+
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        translate: 0 50px;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/*===================================================================================*/
+
 
 
 /* phần slide */
@@ -1066,6 +1189,7 @@
 .icon-contact ul li:last-child {
     margin-left: 10px;
 }
+
 .box-second-footer {
     width: 100%;
     padding: 10px 15px;
@@ -1105,8 +1229,93 @@
     flex-wrap: wrap;
     object-fit: cover;
 }
-/*Phần Footer*/
 
+/*Bộ lọc*/
+.boLoc_DongXe {
+    padding-left: 50px;
+}
+
+    .boLoc_DongXe div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        width: 150px;
+    }
+
+        .boLoc_DongXe div a {
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .boLoc_DongXe div:hover {
+            background-color: black;
+            transition: color 0.5s ease, text-decoration 1s ease;
+        }
+
+        .boLoc_DongXe div a:hover {
+            color: white;
+        }
+
+.boLoc_MauXe_checkBox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+    .boLoc_MauXe_checkBox:checked {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .boLoc_MauXe_checkBox:checked::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 2px;
+        }
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Tùy chỉnh label */
+.form-check-label {
+    font-size: 20px;
+    color: #333;
+    font-weight: normal;
+    text-indent: 10px;
+}
+
+.boLoc_MauXe_checkBox:hover {
+    background-color: grey;
+}
+
+/* Kết Thúc Bộ lọc*/
+
+
+
+/*Phần Footer*/
 .footer {
     background-color: #f1f1f1;
     padding: 0;

@@ -130,6 +130,7 @@
     <Content Include="Images\732fa2_8a33cfd9076f4a728e13b51f16f2efed~mv2.jpg" />
     <Content Include="Images\audiR8.jpg" />
     <Content Include="Images\August-Motorcars-Supercar-Showroom.jpg" />
+    <Content Include="Images\close.jpg" />
     <Content Include="Images\corvette.jpg" />
     <Content Include="Images\dc35efe6a78d48e99fc915c167249cfd.jpg" />
     <Content Include="Images\DS102853_480x480.jpg" />
@@ -147,24 +148,103 @@
     <Content Include="Images\images.jpg" />
     <Content Include="Images\lamborghini-urus-16875333912111624025262-75-0-1080-1920-crop-1687533407701316181641.jpg" />
     <Content Include="Images\logo-ferrari-3.jpg" />
+    <Content Include="Images\logoautodrive.jpg" />
     <Content Include="Images\mayback.jpg" />
     <Content Include="Images\mc20-hero.jpg" />
+    <Content Include="Images\menu.jpg" />
     <Content Include="Images\New-2020-Lamborghini-Aventador-SVJ-Roadster-1597949125 %281%29.jpg" />
     <Content Include="Images\peguni-03-scaled.jpg" />
     <Content Include="Images\r.jpg" />
     <Content Include="Images\renazzo-lamborghini-urus-performante-unveiled-thailand-motor-expo-2022-7-16699859694741013805461-crop-16699861242161368888932.jpg" />
     <Content Include="Images\rolls-royce-ghost-black.jpg" />
     <Content Include="Images\Screenshot 2024-11-03 083812.jpg" />
-    <Content Include="Images\Screenshot 2024-11-03 153608.jpg" />
     <Content Include="Images\Screenshot 2024-11-07 211457.jpg" />
     <Content Include="Images\Screenshot 2024-11-07 212609.jpg" />
     <Content Include="Images\Screenshot 2024-11-07 212831.jpg" />
     <Content Include="Images\Screenshot 2024-11-07 213142.jpg" />
     <Content Include="Images\Screenshot 2024-11-07 220012.jpg" />
     <Content Include="Images\sf90.jpg" />
+    <Content Include="Images\Xe0013_1.jpg" />
+    <Content Include="Images\Xe0013_2.jpg" />
+    <Content Include="Images\Xe0013_3.jpg" />
+    <Content Include="Images\Xe0013_4.jpg" />
+    <Content Include="Images\XE008_1.jpg" />
+    <Content Include="Images\XE008_3.jpg" />
+    <Content Include="Images\XE008_4.jpg" />
+    <Content Include="Images\XE008__2.jpg" />
+    <Content Include="Images\XE015_1.jpg" />
+    <Content Include="Images\XE015_2.jpg" />
+    <Content Include="Images\XE015_3.jpg" />
+    <Content Include="Images\XE015_4.png" />
     <Content Include="Images\xedoisong_maserati_levante_trofeo_viet_nam_1_xwvy.jpg" />
     <Content Include="Images\xehay-Rolls-Royce-Cullinan-review-270120 %284%29 %281%29.jpg" />
     <Content Include="Images\xehay-Rolls-Royce-Cullinan-review-270120 %284%29.jpg" />
+    <Content Include="Images\XE_0011_1.jpg" />
+    <Content Include="Images\XE_0011_1.png" />
+    <Content Include="Images\XE_0011_2.jpg" />
+    <Content Include="Images\XE_0011_3.jpg" />
+    <Content Include="Images\XE_0011_4.jpg" />
+    <Content Include="Images\XE_0012_1.jpg" />
+    <Content Include="Images\XE_0012_2.jpg" />
+    <Content Include="Images\XE_0012_3.jpg" />
+    <Content Include="Images\XE_0012_4.jpg" />
+    <Content Include="Images\XE_0012_4.png" />
+    <Content Include="Images\XE_001_1.jpg" />
+    <Content Include="Images\XE_001_1.png" />
+    <Content Include="Images\XE_001_2.jpg" />
+    <Content Include="Images\XE_001_3.jpg" />
+    <Content Include="Images\XE_001_4.jpg" />
+    <Content Include="Images\XE_002_1.jpg" />
+    <Content Include="Images\XE_002_2.jpg" />
+    <Content Include="Images\XE_002_3.jpg" />
+    <Content Include="Images\XE_003_1.jpg" />
+    <Content Include="Images\XE_003_2.jpg" />
+    <Content Include="Images\XE_003_3.jpg" />
+    <Content Include="Images\XE_003_4.jpg" />
+    <Content Include="Images\XE_004_1.jpg" />
+    <Content Include="Images\XE_004_2.jpg" />
+    <Content Include="Images\XE_004_3.jpg" />
+    <Content Include="Images\XE_004_4.jpg" />
+    <Content Include="Images\XE_005_1.jpg" />
+    <Content Include="Images\XE_005_2.jpg" />
+    <Content Include="Images\XE_005_3.jpg" />
+    <Content Include="Images\XE_005_4.jpg" />
+    <Content Include="Images\XE_006_1.jpg" />
+    <Content Include="Images\XE_006_2.jpg" />
+    <Content Include="Images\XE_006_3.jpg" />
+    <Content Include="Images\XE_006_4.jpg" />
+    <Content Include="Images\XE_007_1.jpg" />
+    <Content Include="Images\XE_007_2.jpg" />
+    <Content Include="Images\XE_007_3.jpg" />
+    <Content Include="Images\XE_007_4.jpg" />
+    <Content Include="Images\XE_009_1.jpg" />
+    <Content Include="Images\XE_009_2.jpg" />
+    <Content Include="Images\XE_009_3.jpg" />
+    <Content Include="Images\XE_009_4.jpg" />
+    <Content Include="Images\XE_010_1.jpg" />
+    <Content Include="Images\XE_010_2.jpg" />
+    <Content Include="Images\XE_010_3.jpg" />
+    <Content Include="Images\XE_010_4.jpg" />
+    <Content Include="Images\XE_014_1.jpg" />
+    <Content Include="Images\XE_014_3.jpg" />
+    <Content Include="Images\XE_014_4.jpg" />
+    <Content Include="Images\XE_014__2.jpg" />
+    <Content Include="Images\XE_016_1.jpg" />
+    <Content Include="Images\XE_016_2.jpg" />
+    <Content Include="Images\XE_016_3.jpg" />
+    <Content Include="Images\XE_016_4.jpg" />
+    <Content Include="Images\XE_017_1.jpg" />
+    <Content Include="Images\XE_017_2.jpg" />
+    <Content Include="Images\XE_017_3.jpg" />
+    <Content Include="Images\XE_017_4.jpg" />
+    <Content Include="Images\XE_018_1.jpg" />
+    <Content Include="Images\XE_018_2.jpg" />
+    <Content Include="Images\XE_018_4.jpg" />
+    <Content Include="Images\XE_018__3.jpg" />
+    <Content Include="Images\XE_019_1.jpg" />
+    <Content Include="Images\XE_019_2.jpg" />
+    <Content Include="Images\XE_019_3.jpg" />
+    <Content Include="Images\XE_019_4.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -181,6 +261,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411091021333_InitialCreate.cs" />
+    <Compile Include="Migrations\202411091021333_InitialCreate.Designer.cs">
+      <DependentUpon>202411091021333_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411211358419_AddSomePictureOfCarAndDeleteSoKhungXe.cs" />
+    <Compile Include="Migrations\202411211358419_AddSomePictureOfCarAndDeleteSoKhungXe.Designer.cs">
+      <DependentUpon>202411211358419_AddSomePictureOfCarAndDeleteSoKhungXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CompanyDbContext.cs" />
     <Compile Include="Models\HoaDonBanHang.cs" />
     <Compile Include="Models\HopDongMuaBan.cs" />
@@ -188,7 +277,7 @@
     <Compile Include="Models\NhaCungCap.cs" />
     <Compile Include="Models\PhieuNhapKho.cs" />
     <Compile Include="Models\PhieuXuatKho.cs" />
-    <Compile Include="Models\Xe.cs" />
+    <Compile Include="Scripts\Xe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -221,6 +310,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Xe\Index.cshtml" />
     <Content Include="Views\Xe\ChiTietSanPham.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\DanhSachXe.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -228,7 +320,14 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202411091021333_InitialCreate.resx">
+      <DependentUpon>202411091021333_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411211358419_AddSomePictureOfCarAndDeleteSoKhungXe.resx">
+      <DependentUpon>202411211358419_AddSomePictureOfCarAndDeleteSoKhungXe.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

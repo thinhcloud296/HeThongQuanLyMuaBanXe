@@ -21,7 +21,5 @@ namespace HeThongQuanLyMuaBanXe.Controllers
             ViewBag.dsXeTheoDong = dsXeTheoDong;
             return View();
         }
-       
-
     }
 }

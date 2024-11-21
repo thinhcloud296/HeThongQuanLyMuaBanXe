@@ -1,46 +1,50 @@
-﻿
+﻿@model List<HeThongQuanLyMuaBanXe.Models.Xe>
+@using HeThongQuanLyMuaBanXe.Controllers
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<div class="p-md-5">
-    <h1>Các dòng siêu xe</h1>
-</div>
+@{
+    List<string> dsDongXe = ViewBag.CacDongXe ?? new List<string>();
+    List<string> dsMauXe = ViewBag.ColorsOfProduct ?? new List<string>();
+}
 
-@if (ViewBag.AllProducts != null && ViewBag.AllProducts.Count > 0)
-{
-    <div class="product-list" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-        @foreach (var product in ViewBag.AllProducts)
+<div class="row ">
+    <p class="col-sm-12" style="font-size:50px; text-indent: 30px; padding-top: 50px">Các dòng siêu xe</p>
+    <div class="col-sm-12 d-flex boLoc_DongXe" style="padding-left:50px">
+        <div>
+            <a href="@Url.Action("Index", "Xe", new { dongXe = (string)null })">Tất cả dòng xe</a>
+        </div>
+        @foreach (string dong in dsDongXe)
         {
-            <div class="product-item" style="flex-basis: calc(100% / 6 - 20px); border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
-                <a href="@Url.Action("ChiTietSanPham", "Xe", new { id = product.MaXe })" style="text-decoration: none; color: inherit;">
-
-                    <img src="~/Images/@product.HinhAnh" alt="@product.TenXe" style="width: 100%; height: 180px; object-fit: cover;">
-                    <div style="padding: 15px;">
-                        <h3 style="font-size: 1.1em; color: #333; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@product.TenXe</h3>
-                        <p style="font-size: 1em; color: #666; margin: 8px 0;">Giá: @String.Format("{0:N0}", product.GiaBanXe) đ</p>
-                        <button style="width: 100%; padding: 10px; background-color:#000000; color: white; border: none; border-radius: 5px; font-size: 1em; cursor: pointer; transition: background-color 0.3s;">
-                            Xem Chi Tiết
-                        </button>
-                    </div>
-                </a>
+            <div>
+                <a href="@Url.Action("Index", "Xe", new { dongXe = dong })">@dong</a>
             </div>
         }
     </div>
+</div>
 
-
-    <style>
-        .product-item:hover {
-            transform: scale(1.05);
+<div class="row ">
+    <div class="col-sm-2 boLoc_MauXe">
+        <p class="h4" style="text-indent: 30px; padding-top:10px; margin:0;"><strong>Màu sắc</strong></p>
+        @using (Html.BeginForm("Index", "Xe", FormMethod.Get, new { style = "padding:10px 55px" }))
+        {
+            foreach (string color in dsMauXe)
+            {
+                <div>
+                    <input type="checkbox" name="mauXe" value="@color" class="form-check-input boLoc_MauXe_checkBox" />
+                    <label class="form-check-label">@color</label>
+                </div>
+            }
+            <div class="w-100 d-flex justify-content-center align-items-center" style="margin-top:10px;">
+                <button style="padding-inline: 25px" type="submit" class="btn btn-light btn-outline-dark">Lọc</button>
+            </div>
         }
-
-        .product-item button:hover {
-            background-color: #0056b3;
+    </div>
+    <div class="col-sm-10" style="padding-top: 10px;">
+        @{
+            Html.RenderPartial("DanhSachXe", Model);
         }
-    </style>
-}
-else
-{
-    <p>Không có sản phẩm nào.</p>
-}
+    </div>
+</div>

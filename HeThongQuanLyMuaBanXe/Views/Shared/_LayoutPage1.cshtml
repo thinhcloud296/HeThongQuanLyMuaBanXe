@@ -7,67 +7,77 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="~/Content/font.css" />
-    <link rel="stylesheet" href="~/Content/main.css?v=1.4" type="text/css">
-    <link rel="stylesheet" href="~/Content/main-mobile.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/shop.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/about.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/main.css?v=1.5" type="text/css">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+          rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 
 <body>
     <div class="header">
-        <div class="content">
-            <nav class="box-menu">
+        <div class="content justify-content-center">
+            <nav class="box-menu d-xl-block d-none w-50">
                 <ul style="margin:0;" class="all-list-menu">
                     <li>
-                        <a href="/home/index" class="hover-a" style="font-weight: bold">TRANG CHỦ</a>
+                        <a href="/home/index" class="hover-a fs-5" style="font-weight: bold">TRANG CHỦ</a>
                     </li>
                     <li class="padding-list-menu">
-                        <a href="/xe/index" class="hover-a" style="font-weight: bold">SẢN PHẨM</a>
+                        <a href="/xe/index" class="hover-a fs-5" style="font-weight: bold">SẢN PHẨM</a>
 
                     </li>
                     <li class="padding-list-menu">
-                        <a href="#footer" class="hover-a" style="font-weight: bold">THÔNG TIN</a>
+                        <a href="#footer" class="hover-a fs-5" style="font-weight: bold">THÔNG TIN</a>
                     </li>
                 </ul>
             </nav>
-            <div class="box-logo">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="~/Images/Screenshot 2024-11-03 153608.jpg" alt="">
-                    </a>
-                </div>
-            </div>
+            <a style="width:auto;height:auto;" class="d-flex justify-content-center align-items-center" href="index.html">
+                <img class="" style="width:50%; height: auto;" src="~/Images/logoautodrive.jpg" alt="">
+            </a>
+            @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { @class = "d-none form-control d-xl-flex w-25 position-absolute", style = "padding-left:50px;background-color:black;border-color:black;right:170px" }))
+            {
+                @Html.TextBox("Search", ViewBag.Search as string, new { @class = "form-control w-auto", spellcheck = "false", placeholder = "Tìm kiếm", style = "margin-right:5px" });
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            }
+
+            @* Menu ẩn *@
+
+            <a class="navbar-burger d-xl-none d-flex z-3" onclick="toggleMenu()"><img src="@Url.Content("~/Images/menu.jpg")" alt="Menu Icon"></a>
+            <!-- Menu khi click vào icon burger -->
+            <nav class="menu">
+                <a href="/home/index" class="hover-a" style="font-weight: bold;animation-delay: 0.1s">TRANG CHỦ</a>
+                <a href="/home/sanpham" class="hover-a" style="font-weight: bold;animation-delay: 0.1s">SẢN PHẨM</a>
+                <a href="/home/index" class="hover-a" style="font-weight: bold;animation-delay: 0.1s">THÔNG TIN</a>
+            </nav>
 
             <div class="box-icon">
-                <div class="box-heart" style="margin-left: 80px; margin-top: 15px">
+                <div class="box-heart" style="">
                     <a href="">
                         <i class="fa-regular fa-heart heart"></i>
                     </a>
                 </div>
 
-                <div class="box-user" style="margin-top: 15px">
+                <div class="box-user" style="">
                     <a href="">
                         <i class="fa-regular fa-user user"></i>
                     </a>
                 </div>
-
-                <div class="box-cart" style="margin-top: 15px">
-                    <a href="">
-                        <i class="fa-solid fa-cart-shopping cart"></i>
-                    </a>
-                </div>
             </div>
         </div>
-
         @RenderSection("Banner", required: false)
-
-        <script src="~/Scripts/script.js"></script>
-
+        <script src="~/Content/script.js"></script>
     </div>
+    <script type="text/javascript">
+        const toggleMenu = () => {
+            document.querySelector('.navbar-burger').classList.toggle('open');  // Xoay burger
+            document.body.classList.toggle("open");
+        };
 
+    </script>
     <!-- Phần main -->
     @RenderBody()
     <!-- Kết thúc main -->
@@ -152,13 +162,6 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="box-second-footer">
-        <div class="first-box">
-            <div class="title">
-                Copyright © 2022. All Right Reserved
             </div>
         </div>
     </div>
