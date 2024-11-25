@@ -1,0 +1,87 @@
+﻿@model HeThongQuanLyMuaBanXe.Models.NhanVien
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&display=swap'>
+    <link href="~/Content/Style.css?v=1.2" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="login_box row w-75">
+            <div class="col-2 login-header">
+                <span>Sign Up</span>
+            </div>
+            @* ------------------------------------------------------------- *@
+            @using (Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "row" }))
+            {
+                <div class="col-7 input_box">
+                    @Html.TextBoxFor(row => row.TenNhanVien, new { @class = "input-field", placeholder = " ", required = "required" })
+
+                    @Html.LabelFor(row => row.TenNhanVien, "Tên nhân viên", new { @class = "label" })
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="col-5 input_box">
+                    @Html.DropDownListFor(row => row.ChucVuNhanVien, new List<SelectListItem>()
+               {
+                   new SelectListItem(){Text="Quản trị hệ thống",Value="Quản lý"},
+                   new SelectListItem(){Text="Nhân viên quản lý kho",Value="Quản lý kho"},
+                   new SelectListItem(){Text="Nhân viên quản lý đơn hàng",Value="Quản lý đơn hàng"}
+               }, "Chọn chức vụ...", new { @class = "input-field dropdown-custom" })
+                    <i class="bx bx-user-check icon"></i>
+                </div>
+
+                <div class="col-12 input_box">
+                    @Html.TextBoxFor(row => row.DiaChiNhanVien, new { @class = "input-field", placeholder = " ", required = "required" })
+
+                    @Html.LabelFor(row => row.DiaChiNhanVien, "Địa chỉ hiện tại", new { @class = "label" })
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="col-6 input_box">
+                    @Html.TextBoxFor(row => row.EmailNhanVien, new { @class = "input-field", placeholder = " ", required = "required" })
+
+                    @Html.LabelFor(row => row.EmailNhanVien, "Email", new { @class = "label" })
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="col-6 input_box">
+                    @Html.TextBoxFor(row => row.SoDienThoaiNhanVien, new { @class = "input-field", placeholder = " ", required = "required" })
+
+                    @Html.LabelFor(row => row.SoDienThoaiNhanVien, "Số điện thoại", new { @class = "label" })
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="input_box">
+                    @Html.TextBoxFor(row => row.TenDangNhap, new { @class = "input-field", placeholder = " ", required = "required" })
+
+                    @Html.LabelFor(row => row.TenDangNhap, "Tên đăng nhập", new { @class = "label" })
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="input_box">
+                    @Html.TextBoxFor(row => row.MatKhau, new { @class = "input-field", placeholder = " ", required = "required", type = "password" })
+
+                    @Html.LabelFor(row => row.MatKhau, "Mật khẩu", new { @class = "label" })
+                    <i class="bx bx-lock-alt icon"></i>
+                </div>
+
+
+                <div class="input_box">
+                    <button style="text-decoration: none;color:black;" type="submit" class="input-submit">Đăng ký</button>
+                </div>
+            }
+            @* ------------------------------------------------------------- *@
+            <div class="login">
+                <span>Đã có tài khoản ? @Html.ActionLink("Đăng nhập", "Login", "User", new { @class = "text-decoration-none" })</span>
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

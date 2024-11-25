@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var tenNVDangDangNhap = HttpUtility.UrlDecode(Context.Request.Cookies["name"]?.Value, System.Text.Encoding.UTF8);
+
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -62,14 +66,26 @@
                 </div>
 
                 <div class="box-user" style="">
-                    <a href="">
-                        <i class="fa-regular fa-user user"></i>
-                    </a>
+                    @{
+                        if (tenNVDangDangNhap == null)
+                        {
+                            <a href="/User/Login">
+                                <i class="fa-regular fa-user user"></i>
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="/Xe/">
+                                <i class="fa-regular fa-user user"></i>
+                            </a>
+                        }
+                    }
+
                 </div>
             </div>
         </div>
         @RenderSection("Banner", required: false)
-        <script src="~/Content/script.js"></script>
+        <script src="~/Scripts/script.js"></script>
     </div>
     <script type="text/javascript">
         const toggleMenu = () => {

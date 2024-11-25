@@ -1,0 +1,64 @@
+﻿@model HeThongQuanLyMuaBanXe.Models.NhanVien
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&display=swap'>
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="login_box">
+            <div class="login-header">
+                <span>Login</span>
+            </div>
+            @* ------------------------------------------------------------- *@
+            @using (Html.BeginForm("Login", "User", FormMethod.Post))
+            {
+                <div class="input_box">
+                    @Html.TextBoxFor(row => row.TenDangNhap, new { @class = "input-field", placeholder = " ", required = "required" })
+
+                    @Html.LabelFor(row => row.TenDangNhap, "Tên đăng nhập", new { @class = "label" })
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="input_box">
+                    @Html.TextBoxFor(row => row.MatKhau, new { @class = "input-field", placeholder = " ", required = "required", type = "password" })
+
+                    @Html.LabelFor(row => row.MatKhau, "Mật khẩu", new { @class = "label" })
+                    <i class="bx bx-lock-alt icon"></i>
+                </div>
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+
+                    <div class="forgot">
+                        <a class="text-decoration-none" href="#">Forgot password?</a>
+                    </div>
+                </div>
+
+                <div class="input_box">
+                    <button style="text-decoration: none;color:black;" type="submit" class="input-submit">Đăng nhập</button>
+                </div>
+            }
+            @* ------------------------------------------------------------- *@
+            <div class="register">
+                <div class="register">
+                    <span>Không có tài khoản? @Html.ActionLink("Tạo tài khoản", "Register", "User", new { @class = "text-decoration-none" })</span>
+                </div>
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+
+
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>

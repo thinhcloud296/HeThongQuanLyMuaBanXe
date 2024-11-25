@@ -11,6 +11,7 @@ namespace HeThongQuanLyMuaBanXe.Models
         public int MaHopDong { get; set; }
         public int MaKhachHang { get; set; }
         public int MaXe { get; set; }
+        public string MaNhanVien { get; set; }
         [Required]
         public DateTime? NgayLapHopDong { get; set; }
         [Required]
@@ -20,5 +21,6 @@ namespace HeThongQuanLyMuaBanXe.Models
 
         public virtual KhachHang KhachHang { get; set; }
         public virtual Xe Xe { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
     }
 }

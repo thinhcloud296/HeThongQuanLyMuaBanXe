@@ -118,6 +118,7 @@
     <Content Include="Content\font.css" />
     <Content Include="Content\main.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\1Screenshot 2024-11-08 102958.jpg" />
@@ -257,6 +258,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\XeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -269,15 +271,20 @@
     <Compile Include="Migrations\202411211358419_AddSomePictureOfCarAndDeleteSoKhungXe.Designer.cs">
       <DependentUpon>202411211358419_AddSomePictureOfCarAndDeleteSoKhungXe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411251657418_AddNhanVien.cs" />
+    <Compile Include="Migrations\202411251657418_AddNhanVien.Designer.cs">
+      <DependentUpon>202411251657418_AddNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CompanyDbContext.cs" />
     <Compile Include="Models\HoaDonBanHang.cs" />
     <Compile Include="Models\HopDongMuaBan.cs" />
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\NhaCungCap.cs" />
+    <Compile Include="Models\NhanVien.cs" />
     <Compile Include="Models\PhieuNhapKho.cs" />
     <Compile Include="Models\PhieuXuatKho.cs" />
-    <Compile Include="Scripts\Xe.cs" />
+    <Compile Include="Models\Xe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -310,9 +317,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Xe\Index.cshtml" />
     <Content Include="Views\Xe\ChiTietSanPham.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\DanhSachXe.cshtml" />
+    <Content Include="Views\Shared\_LayoutDangNhap.cshtml" />
+    <Content Include="Views\Shared\_LayoutDangKy.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -327,7 +336,11 @@
     <EmbeddedResource Include="Migrations\202411211358419_AddSomePictureOfCarAndDeleteSoKhungXe.resx">
       <DependentUpon>202411211358419_AddSomePictureOfCarAndDeleteSoKhungXe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411251657418_AddNhanVien.resx">
+      <DependentUpon>202411251657418_AddNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
