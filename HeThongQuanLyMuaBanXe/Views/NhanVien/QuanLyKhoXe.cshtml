@@ -11,7 +11,7 @@
             <!-- Header -->
             <div class="card-header myCardHeader position-relative">
                 <h3 class="text-center text-primary font-weight-bold">
-                    Danh sách nhân viên
+                    Danh sách xe
                 </h3>
                 <a href="@Url.Action("Create","Xe")" class="btn btn-primary position-absolute"
                    id="btnThem"
@@ -32,10 +32,12 @@
                             <th style="width:10%;">Dòng xe</th>
                             <th style="width:10% ;">Số khung xe</th>
                             <th style="width: 10%;">Màu sắc</th>
-                            <th style="width: 10%;">Năm sản xuất</th>
+                            <th style="width: 12%;">Năm sản xuất</th>
                             <th style="width: 10%;">Giá bán</th>
                             <th style="width: 15%;">Mô tả</th>
                             <th style="width: 10%;">Trạng thái</th>
+                            <th style="width: 5%;">Sửa</th>
+                            <th style="width: 5%;">Xóa</th>
                         </tr>
                     </thead>
                     <tbody id="tableDanhSach">
@@ -47,12 +49,12 @@
                                 <td style="width: 10%;">@Html.DisplayFor(x => nv.DongXe)</td>
                                 <td style="width:10% ;">@Html.DisplayFor(x => nv.SoKhungXe)</td>
                                 <td style="width: 10%;">@Html.DisplayFor(x => nv.MauSac)</td>
-                                <td style="width: 10%;">@Html.DisplayFor(x => nv.NamSanXuat)</td>
+                                <td style="width: 12%;">@Html.DisplayFor(x => nv.NamSanXuat)</td>
                                 <td style="width: 10%;">@Html.DisplayFor(x => nv.GiaBanXe)</td>
                                 <td style="width: 10%;">@Html.DisplayFor(x => nv.MoTa)</td>
                                 <td style="width: 15%;">@Html.DisplayFor(x => nv.TrangThai)</td>                       
-                                @*<td style="width: 5%;"><a href="@Url.Action("EditNV","NhanVien",new {id=nv.MaNhanVien})" class="fa fa-cog"></a></td>
-                                <th style="width: 5%;"><a href="@Url.Action("DeleteNV","NhanVien",new {id=nv.MaNhanVien})" class="fa fa-trash"></a></th>*@
+                                <td style="width: 5%;"><a href="@Url.Action("Edit","Xe",new {id=nv.MaXe})" class="fa fa-cog"></a></td>
+                                <th style="width: 5%;"><a href="@Url.Action("Delete","Xe",new {id=nv.MaXe})" class="fa fa-trash"></a></th>
                             </tr>
                         }
                     </tbody>

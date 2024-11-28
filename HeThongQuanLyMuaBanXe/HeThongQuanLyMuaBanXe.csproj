@@ -365,6 +365,8 @@
     <Content Include="Views\NhanVien\EditNV.cshtml" />
     <Content Include="Views\NhanVien\QuanLyKhoXe.cshtml" />
     <Content Include="Views\Xe\Create.cshtml" />
+    <Content Include="Views\Xe\Delete.cshtml" />
+    <Content Include="Views\Xe\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

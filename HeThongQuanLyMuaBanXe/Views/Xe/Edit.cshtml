@@ -1,0 +1,158 @@
+﻿@model HeThongQuanLyMuaBanXe.Models.Xe
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&display=swap'>
+    <link href="~/Content/Style.css?v=1.2" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style=" background-image: url(/Images/showroomBackgruond.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;">
+    <div class="wrapper">
+        <div class="login_box row w-75">
+            <div class="col-4 login-header">
+                <span>Thông tin nhân viên</span>
+            </div>
+            @* ------------------------------------------------------------- *@
+            @using (Html.BeginForm("Create", "Xe", FormMethod.Post, new { @class = "row" }))
+            {
+                <div class="col-6 input_box">
+                    @Html.TextBoxFor(row => row.TenXe, new { @class = "input-field", placeholder = " ", required = "required" })
+
+                    @Html.LabelFor(row => row.TenXe, "Tên xe", new { @class = "label" })
+                    @Html.ValidationMessageFor(model => model.TenXe)
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="col-6 input_box">
+                    @Html.DropDownListFor(row => row.DongXe, new List<SelectListItem>()
+               {
+                   new SelectListItem(){Text="Hypercar",Value="Hypercar"},
+                   new SelectListItem(){Text="Luxury",Value="Luxury"},
+                   new SelectListItem(){Text="Supercar",Value="Supercar"},
+                   new SelectListItem(){Text="SUV",Value="SUV"}
+               },
+                   new { @class = "input-field dropdown-custom" })
+                    @Html.ValidationMessageFor(model => model.DongXe)
+                    <i class="bx bx-user-check icon"></i>
+                </div>
+
+                <div class="col-6 input_box">
+                    @Html.DropDownListFor(row => row.HangXe, new List<SelectListItem>()
+                    {
+                        new SelectListItem(){Text="Ferrari", Value="Ferrari"},
+                        new SelectListItem(){Text="Lamborghini", Value="Lamborghini"},
+                        new SelectListItem(){Text="Bugatti", Value="Bugatti"},
+                        new SelectListItem(){Text="Porsche", Value="Porsche"},
+                        new SelectListItem(){Text="McLaren", Value="McLaren"},
+                        new SelectListItem(){Text="Aston Martin", Value="Aston Martin"},
+                        new SelectListItem(){Text="Rolls-Royce", Value="Rolls-Royce"},
+                        new SelectListItem(){Text="Bentley", Value="Bentley"},
+                        new SelectListItem(){Text="Pagani", Value="Pagani"},
+                        new SelectListItem(){Text="Koenigsegg", Value="Koenigsegg"}
+                    },
+                   new { @class = "input-field dropdown-custom" })
+                    @Html.ValidationMessageFor(model => model.HangXe)
+                    <i class="bx bx-user-check icon"></i>
+                </div>
+                <div class="col-6 input_box">
+                    @Html.DropDownListFor(row => row.MauSac, new List<SelectListItem>()
+                    {
+                        new SelectListItem(){Text="Đỏ", Value="Đỏ"},
+                        new SelectListItem(){Text="Xanh dương", Value="Xanh dương"},
+                        new SelectListItem(){Text="Xanh lá", Value="Xanh lá"},
+                        new SelectListItem(){Text="Vàng", Value="Vàng"},
+                        new SelectListItem(){Text="Đen", Value="Đen"},
+                        new SelectListItem(){Text="Trắng", Value="Trắng"}
+                    },
+                   new { @class = "input-field dropdown-custom" })
+                    @Html.ValidationMessageFor(model => model.MauSac)
+                    <i class="bx bx-user-check icon"></i>
+                </div>
+                <div class="input_box">
+                    @Html.TextBoxFor(row => row.MoTa, new { @class = "input-field", placeholder = " ", required = "required" })
+
+                    @Html.LabelFor(row => row.MoTa, "Mô tả", new { @class = "label" })
+                    @Html.ValidationMessageFor(model => model.MoTa)
+                    <i class="bx bx-user icon"></i>
+                </div>
+                <div class="col-6 input_box">
+                    @Html.TextBoxFor(row => row.SoKhungXe, new { @class = "input-field", placeholder = " ", required = "required" })
+
+                    @Html.LabelFor(row => row.SoKhungXe, "Số khung xe", new { @class = "label" })
+                    @Html.ValidationMessageFor(model => model.TrangThai)
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="col-6 input_box">
+                    @Html.TextBoxFor(row => row.NamSanXuat, new { @class = "input-field", placeholder = " ", required = "required" })
+
+                    @Html.LabelFor(row => row.NamSanXuat, "Năm sản xuất", new { @class = "label" })
+                    @Html.ValidationMessageFor(model => model.NamSanXuat)
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="col-6 input_box">
+                    @Html.TextBoxFor(row => row.GiaBanXe, new { @class = "input-field", placeholder = " ", required = "required" })
+
+                    @Html.LabelFor(row => row.GiaBanXe, "Giá xe", new { @class = "label" })
+                    @Html.ValidationMessageFor(model => model.GiaBanXe)
+                    <i class="bx bx-lock-alt icon"></i>
+                </div>
+
+                <div class="col-6 input_box">
+                    @Html.TextBoxFor(row => row.TrangThai, new { @class = "input-field", placeholder = " ", required = "required" })
+
+                    @Html.LabelFor(row => row.TrangThai, "Trạng thái", new { @class = "label" })
+                    @Html.ValidationMessageFor(model => model.TrangThai)
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="col-6 input_box">
+                    <input type="file" name="imageFile" id="imageFile" class=" input-field" />
+
+                    @Html.LabelFor(row => row.HinhAnh, "Ảnh 1", new { @class = "label" })
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="col-6 input_box">
+                    <input type="file" name="imageFile2" id="imageFile2" class=" input-field" />
+
+                    @Html.LabelFor(row => row.HinhAnh2, "Ảnh 2", new { @class = "label" })
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="col-6 input_box">
+                    <input type="file" name="imageFile3" id="imageFile3" class=" input-field" />
+
+                    @Html.LabelFor(row => row.HinhAnh3, "Ảnh 3", new { @class = "label" })
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="col-6 input_box">
+                    <input type="file" name="imageFile4" id="imageFile4" class=" input-field" />
+
+                    @Html.LabelFor(row => row.HinhAnh4, "Ảnh 4", new { @class = "label" })
+                    <i class="bx bx-user icon"></i>
+                </div>
+
+                <div class="input_box d-flex flex-row justify-content-center">
+                    <button style="border-radius:10px;text-decoration: none; color: black; width: fit-content; padding: 10px 12px" type="submit" class="input-submit">Chỉnh sửa</button>&nbsp;
+                    <a style="border-radius: 10px; text-decoration: none; width: fit-content; padding: 10px 15px " href="@Url.Action("Index", "NhanVien")" class="btn btn-danger text-white d-flex">Hủy</a>
+                </div>
+            }
+            @* ------------------------------------------------------------- *@
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

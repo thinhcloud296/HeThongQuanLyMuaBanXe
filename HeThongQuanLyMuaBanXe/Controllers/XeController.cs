@@ -68,5 +68,48 @@ namespace HeThongQuanLyMuaBanXe.Controllers
             }
             return View();
         }
+
+        public ActionResult Delete(int id)
+        {
+            CompanyDbContext db = new CompanyDbContext();
+            Xe nvCheck = db.Xes.Where(x => x.MaXe == id).FirstOrDefault();
+            return View(nvCheck);
+        }
+        [HttpPost]
+        public ActionResult Delete(int id, Xe _)
+        {
+            CompanyDbContext db = new CompanyDbContext();
+            Xe nvCheck = db.Xes.Where(x => x.MaXe == id).FirstOrDefault();
+            db.Xes.Remove(nvCheck);
+            db.SaveChanges();
+            return RedirectToAction("QuanLyKhoXe", "NhanVien");
+        }
+        public ActionResult Edit(int id)
+        {
+            CompanyDbContext db = new CompanyDbContext();
+            Xe nvCheck = db.Xes.Where(x => x.MaXe == id).FirstOrDefault();
+            return View(nvCheck);
+        }
+        [HttpPost]
+        public ActionResult Edit(Xe nv)
+        {
+            CompanyDbContext db = new CompanyDbContext();
+            ViewBag.EditCheck = "";
+            Xe nvCheck = db.Xes.Where(x => x.MaXe == nv.MaXe).FirstOrDefault();
+            if (nvCheck != null)
+            {
+                nvCheck.TenXe = nv.TenXe;
+                nvCheck.HangXe = nv.HangXe;
+                nvCheck.DongXe = nv.DongXe;
+                nvCheck.SoKhungXe = nv.SoKhungXe;
+                nvCheck.MauSac = nv.MauSac;
+                nvCheck.NamSanXuat = nv.NamSanXuat;
+                nvCheck.GiaBanXe = nv.GiaBanXe;
+                db.SaveChanges();
+                return RedirectToAction("QuanLyKhoXe", "NhanVien");
+            }
+            ViewBag.EditCheck = "Chỉnh sửa không thành công !";
+            return RedirectToAction("QuanLyKhoXe", "NhanVien");
+        }
     }
 }

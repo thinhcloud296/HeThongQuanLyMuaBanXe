@@ -1,0 +1,91 @@
+﻿@model HeThongQuanLyMuaBanXe.Models.Xe
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favourites</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/jquery-ui.min.css" />
+    <link rel="stylesheet" href="~/Content/styleQLNV.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/mainQLNV.css" />
+    <link rel="stylesheet" href="~/Content/StyleQLDonHang.css?v=1.1" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Page Content Holder -->
+        <div id="content">
+            <div class="container">
+                <div class="card text-center">
+                    <!-- Header -->
+                    <div class="card-header myCardHeader position-relative">
+                        <h3 class="text-center text-primary font-weight-bold">
+                            Thông tin nhân viên
+                        </h3>
+                    </div>
+                    <!-- Body -->
+                    @using (Html.BeginForm("Delete", "Xe", FormMethod.Post, new { @class = "row" }))
+                    {
+                        <div class="card-body">
+
+                            <input type="hidden" name="MaNhanVien" value="@Model.MaXe" />
+                            <table class="table table-bordered">
+                                <thead class="text-primary">
+                                    <tr>
+                                        <th style="width:15% ;">Tên xe</th>
+                                        <th style="width:10% ;">Hãng xe</th>
+                                        <th style="width:10%;">Dòng xe</th>
+                                        <th style="width:10% ;">Số khung xe</th>
+                                        <th style="width: 10%;">Màu sắc</th>
+                                        <th style="width: 12%;">Năm sản xuất</th>
+                                        <th style="width: 10%;">Giá bán</th>
+                                        <th style="width: 15%;">Mô tả</th>
+                                        <th style="width: 10%;">Trạng thái</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableDanhSach">
+                                    <tr>
+                                        <td style="width:15% ;">@Html.DisplayFor(x => Model.TenXe)</td>
+                                        <td style="width:10% ;">@Html.DisplayFor(x => Model.HangXe)</td>
+                                        <td style="width: 10%;">@Html.DisplayFor(x => Model.DongXe)</td>
+                                        <td style="width:10% ;">@Html.DisplayFor(x => Model.SoKhungXe)</td>
+                                        <td style="width: 10%;">@Html.DisplayFor(x => Model.MauSac)</td>
+                                        <td style="width: 12%;">@Html.DisplayFor(x => Model.NamSanXuat)</td>
+                                        <td style="width: 10%;">@Html.DisplayFor(x => Model.GiaBanXe)</td>
+                                        <td style="width: 10%;">@Html.DisplayFor(x => Model.MoTa)</td>
+                                        <td style="width: 15%;">@Html.DisplayFor(x => Model.TrangThai)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button style="width:fit-content;padding:9px 12px" type="submit" class="btn btn-danger">Xóa</button>
+                            <a style="width:fit-content;padding:9px 12px" href="@Url.Action("Index", "NhanVien")" class="btn btn-dark text-white">Hủy</a>
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Script -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/datepicker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebarCollapse").on("click", function () {
+                $("#sidebar").toggleClass("active");
+            });
+        });
+    </script>
+</body>
+</html>
