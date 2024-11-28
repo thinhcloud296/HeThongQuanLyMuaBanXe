@@ -116,9 +116,12 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\font.css" />
+    <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\mainQLNV.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Style.css" />
+    <Content Include="Content\styleQLNV.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\1Screenshot 2024-11-08 102958.jpg" />
@@ -252,14 +255,22 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\datepicker.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.easing.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FavouriteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NhanVienController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\XeController.cs" />
+    <Compile Include="Filter\AuthFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -275,8 +286,21 @@
     <Compile Include="Migrations\202411251657418_AddNhanVien.Designer.cs">
       <DependentUpon>202411251657418_AddNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411271257434_DeleteChucVuNhanVien.cs" />
+    <Compile Include="Migrations\202411271257434_DeleteChucVuNhanVien.Designer.cs">
+      <DependentUpon>202411271257434_DeleteChucVuNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411271306378_AddTrangThaiHopDong.cs" />
+    <Compile Include="Migrations\202411271306378_AddTrangThaiHopDong.Designer.cs">
+      <DependentUpon>202411271306378_AddTrangThaiHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411281025265_AddFavourite.cs" />
+    <Compile Include="Migrations\202411281025265_AddFavourite.Designer.cs">
+      <DependentUpon>202411281025265_AddFavourite.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CompanyDbContext.cs" />
+    <Compile Include="Models\Favourite.cs" />
     <Compile Include="Models\HoaDonBanHang.cs" />
     <Compile Include="Models\HopDongMuaBan.cs" />
     <Compile Include="Models\KhachHang.cs" />
@@ -322,6 +346,11 @@
     <Content Include="Views\Shared\_LayoutDangKy.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\Shared\_LayoutNhanVien2.cshtml" />
+    <Content Include="Views\NhanVien\Index.cshtml" />
+    <Content Include="Views\NhanVien\QuanLyDonHang.cshtml" />
+    <Content Include="Views\NhanVien\QuanLyNhanVien.cshtml" />
+    <Content Include="Views\Favourite\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -338,6 +367,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411251657418_AddNhanVien.resx">
       <DependentUpon>202411251657418_AddNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411271257434_DeleteChucVuNhanVien.resx">
+      <DependentUpon>202411271257434_DeleteChucVuNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411271306378_AddTrangThaiHopDong.resx">
+      <DependentUpon>202411271306378_AddTrangThaiHopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411281025265_AddFavourite.resx">
+      <DependentUpon>202411281025265_AddFavourite.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

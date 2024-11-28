@@ -39,7 +39,7 @@
                     </li>
                 </ul>
             </nav>
-            <a style="width:auto;height:auto;" class="d-flex justify-content-center align-items-center" href="index.html">
+            <a style="width:auto;height:auto;" class="d-flex justify-content-center align-items-center" href=@Url.Action("Index","Home")>
                 <img class="" style="width:50%; height: auto;" src="~/Images/logoautodrive.jpg" alt="">
             </a>
             @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { @class = "d-none form-control d-xl-flex w-25 position-absolute", style = "padding-left:50px;background-color:black;border-color:black;right:170px" }))
@@ -60,27 +60,15 @@
 
             <div class="box-icon">
                 <div class="box-heart" style="">
-                    <a href="">
+                    <a href=@Url.Action("Index","Favourite")>
                         <i class="fa-regular fa-heart heart"></i>
                     </a>
                 </div>
 
                 <div class="box-user" style="">
-                    @{
-                        if (tenNVDangDangNhap == null)
-                        {
-                            <a href="/User/Login">
-                                <i class="fa-regular fa-user user"></i>
-                            </a>
-                        }
-                        else
-                        {
-                            <a href="/Xe/">
-                                <i class="fa-regular fa-user user"></i>
-                            </a>
-                        }
-                    }
-
+                    <a href="@Url.Action("Index","NhanVien")">
+                        <i class="fa-regular fa-user user"></i>
+                    </a>
                 </div>
             </div>
         </div>

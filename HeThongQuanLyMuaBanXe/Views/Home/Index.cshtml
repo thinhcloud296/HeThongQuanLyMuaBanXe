@@ -69,10 +69,6 @@
                                 <img style="object-position: 0px;" id="Pic-3" src="~/Images/@row.HinhAnh" alt="@row.TenXe">
                                 <div class="note-notif">
                                 </div>
-                                <div class="all-box-icon">
-                                    <i class="fa-regular fa-heart"></i>
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </div>
                             </div>
                         </a>
                         <div class="box-name-product">
@@ -83,10 +79,11 @@
                                 <span>@row.GiaBanXe $</span>
                             </div>
                             <div class="buttom-1">
-                                <button type="button">
+                                <button type="button" onclick="window.location.href='@Url.Action("Add", "Favourite", new { id = row.MaXe })';">
                                     <i class="fa-solid fa-cart-plus"></i>
-                                    <span>add to cart</span>
+                                    <span>Thêm vào yêu thích</span>
                                 </button>
+
                             </div>
                         </div>
                     </div>

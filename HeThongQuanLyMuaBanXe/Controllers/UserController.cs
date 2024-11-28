@@ -31,17 +31,23 @@ namespace HeThongQuanLyMuaBanXe.Controllers
                     {
                         HttpCookie authCookie = new HttpCookie("auth", nvCheck.TenDangNhap);
                         HttpCookie nameCookie = new HttpCookie("name", HttpUtility.UrlEncode(nvCheck.TenNhanVien, System.Text.Encoding.UTF8));
-                        Response.Cookies.Add(nameCookie);
-                        HttpCookie roleCookie = new HttpCookie("role", nvCheck.ChucVuNhanVien);
+                        HttpCookie roleCookie = new HttpCookie("role", nvCheck.VaiTro);
                         Response.Cookies.Add(authCookie);
                         Response.Cookies.Add(nameCookie);
                         Response.Cookies.Add(roleCookie);
-
-                        return RedirectToAction("Index", "Home");
+                        if (nvCheck.VaiTro == "admin")
+                        {
+                            return RedirectToAction("QuanLyNhanVien", "NhanVien");
+                        }
+                        if (nvCheck.VaiTro == "userDonHang")
+                        {
+                            return RedirectToAction("QuanLyDonHang", "NhanVien");
+                        }
+                        return RedirectToAction("Index", "NhanVien");
                     }
                 }
             }
-            //ModelState.AddModelError("MatKhau", "Đăng nhập không thành công !");
+            ModelState.AddModelError("MatKhau", "Đăng nhập không thành công !");
             return View();
         }
         public ActionResult Logout()
@@ -75,10 +81,6 @@ namespace HeThongQuanLyMuaBanXe.Controllers
                 NhanVien nvCheck = db.NhanViens.Where(nvien => nvien.TenDangNhap == nv.TenDangNhap).FirstOrDefault();
                 if (nvCheck == null)
                 {
-                    if (nv.ChucVuNhanVien.Equals("Quản lý"))
-                        nv.VaiTro = "admin";
-                    else
-                        nv.VaiTro = "user";
                     nv.MaNhanVien = TaoMaNV();
                     db.NhanViens.Add(nv);
                     db.SaveChanges();

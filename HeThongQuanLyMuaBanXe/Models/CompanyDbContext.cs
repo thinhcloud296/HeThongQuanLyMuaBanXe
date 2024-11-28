@@ -16,5 +16,6 @@ namespace HeThongQuanLyMuaBanXe.Models
         public DbSet<HopDongMuaBan> HopDongMuaBans { get; set; }
         public DbSet<HoaDonBanHang> HoaDonBanHangs { get; set; }
         public DbSet<NhanVien> NhanViens { get; set; }
+        public DbSet<Favourite> Favourites {  get; set; }
     }
 }

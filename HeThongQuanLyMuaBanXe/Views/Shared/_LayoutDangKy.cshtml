@@ -26,11 +26,10 @@
                 </div>
 
                 <div class="col-5 input_box">
-                    @Html.DropDownListFor(row => row.ChucVuNhanVien, new List<SelectListItem>()
+                    @Html.DropDownListFor(row => row.VaiTro, new List<SelectListItem>()
                {
-                   new SelectListItem(){Text="Quản trị hệ thống",Value="Quản lý"},
-                   new SelectListItem(){Text="Nhân viên quản lý kho",Value="Quản lý kho"},
-                   new SelectListItem(){Text="Nhân viên quản lý đơn hàng",Value="Quản lý đơn hàng"}
+                   new SelectListItem(){Text="Nhân viên quản lý kho",Value="userKho"},
+                   new SelectListItem(){Text="Nhân viên quản lý đơn hàng",Value="userDonHang"}
                }, "Chọn chức vụ...", new { @class = "input-field dropdown-custom" })
                     <i class="bx bx-user-check icon"></i>
                 </div>

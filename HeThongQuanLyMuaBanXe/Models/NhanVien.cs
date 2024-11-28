@@ -13,8 +13,6 @@ namespace HeThongQuanLyMuaBanXe.Models
         [Required]
         public string TenNhanVien { get; set; }
         [Required]
-        public string ChucVuNhanVien { get; set; }
-        [Required]
         public string DiaChiNhanVien { get; set; }
         [Required]
         public string SoDienThoaiNhanVien { get; set; }

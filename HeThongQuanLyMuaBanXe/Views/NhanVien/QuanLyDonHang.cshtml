@@ -1,0 +1,209 @@
+﻿
+@{
+    ViewBag.Title = "QuanLyDonHang";
+    Layout = "~/Views/Shared/_LayoutNhanVien2.cshtml";
+}
+
+@{
+    var hopDongList = ViewBag.HopDongList as List<HeThongQuanLyMuaBanXe.Models.HopDongMuaBan>;
+    var khachHangList = ViewBag.KhachHangList as List<HeThongQuanLyMuaBanXe.Models.KhachHang>;
+}
+
+@model IEnumerable<HeThongQuanLyMuaBanXe.Models.HopDongMuaBan>
+
+
+<!-- Page Content Holder -->
+<div id="content">
+    <div class="container">
+        <div class="card text-center">
+            <!-- Body -->
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="input-group">
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Loại nhân viên"
+                                   id="searchName" />
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="btnTimNV">
+                                    <button class="btn" onclick="searchStaff()">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <thead class="text-primary">
+                        <tr>
+                            <th>Mã hợp đồng</th>
+                            <th>Tên khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Địa chỉ</th>
+                            <th>Mã xe</th>
+                            <th>Ngày ký</th>
+                            <th>Số tiền</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            var khachHang = khachHangList.FirstOrDefault(k => k.MaKhachHang == item.MaKhachHang);
+
+                            <tr>
+                                <td>@item.MaHopDong</td>
+
+                                <td>
+                                    <input type="text" name="HoTenKhachHang" value="@(khachHang != null ? khachHang.HoTenKhachHang : "Không tìm thấy")" />
+                                </td>
+
+                                <!-- Số điện thoại (input để chỉnh sửa) -->
+                                <td>
+                                    <input type="text" name="SoDienThoaiKhachHang" value="@(khachHang != null ? khachHang.SoDienThoaiKhachHang : "Không tìm thấy")" />
+                                </td>
+
+                                <!-- Email (input để chỉnh sửa) -->
+                                <td>
+                                    <input type="email" name="EmailKhachHang" value="@(khachHang != null ? khachHang.EmailKhachHang : "Không tìm thấy")" />
+                                </td>
+
+                                <!-- Địa chỉ (input để chỉnh sửa) -->
+                                <td>@khachHang.DiaChiKhachHang</td>
+                                <td>@item.MaXe</td>
+                                <td>@item.NgayLapHopDong</td>
+                                <td>@item.TongGiaTriHopDong</td>
+                                <td>@item.TrangThaiHopDong</td>
+
+                                <td>
+                                    @if (item.TrangThaiHopDong == "Chưa phê duyệt")
+                                    {
+                                        <button class="btn btn-success" onclick="changeStatus('@item.MaHopDong', 'Đã phê duyệt')">Duyệt</button>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn btn-warning" onclick="changeStatus('@item.MaHopDong', 'Chưa phê duyệt')">Chưa duyệt</button>
+                                    }
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <script type="text/javascript">
+function changeStatus(maHopDong, newStatus) {
+    $.ajax({
+        url: '@Url.Action("ChangeStatus", "NhanVien")', // Đường dẫn tới action ChangeStatus trong controller
+        type: 'POST',
+        data: {
+            maHopDong: maHopDong,
+            newStatus: newStatus
+        },
+        success: function (response) {
+            if (response.success) {
+                // Cập nhật lại trạng thái trên giao diện
+                location.reload(); // Tải lại trang để xem thay đổi
+            } else {
+                alert("Có lỗi xảy ra khi cập nhật trạng thái.");
+            }
+        },
+        error: function () {
+            alert("Không thể kết nối đến máy chủ.");
+        }
+    });
+}
+            </script>
+
+            <style>
+                a {
+                    color: inherit !important; /* Để không sử dụng màu sắc đặc biệt */
+                    text-decoration: none !important; /* Để không có gạch dưới */
+                }
+
+                #sidebar {
+                    min-width: 250px;
+                    max-width: 250px;
+                    background: rgb(52, 52, 52);
+                    color: #fff;
+                    transition: all 0.3s;
+                }
+
+
+
+                .container {
+                    background-color: white;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    padding: 30px;
+                    border-radius: 8px;
+                }
+
+                h3.text-center {
+                    color: #007bff;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+
+                .table {
+                    margin-top: 20px;
+                }
+
+                .table-bordered th,
+                .table-bordered td {
+                    text-align: center;
+                    vertical-align: middle;
+                }
+
+                .table th {
+                    background-color: #007bff;
+                    color: white;
+                }
+
+                .table-striped tbody tr:nth-of-type(odd) {
+                    background-color: #f2f2f2;
+                }
+
+                .table-hover tbody tr:hover {
+                    background-color: #e9ecef;
+                }
+
+                .btn-custom {
+                    background-color: #28a745;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                    .btn-custom:hover {
+                        background-color: #218838;
+                    }
+
+                .pagination {
+                    margin-top: 20px;
+                    justify-content: center;
+                }
+
+                    .pagination .page-item .page-link {
+                        color: #007bff;
+                    }
+
+                        .pagination .page-item .page-link:hover {
+                            background-color: #007bff;
+                            color: white;
+                        }
+
+                    .pagination .active .page-link {
+                        background-color: #007bff;
+                        color: white;
+                    }
+            </style>
+        </div>
+    </div>
+</div>

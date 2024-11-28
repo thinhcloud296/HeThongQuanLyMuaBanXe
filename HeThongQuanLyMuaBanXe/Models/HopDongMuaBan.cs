@@ -18,6 +18,7 @@ namespace HeThongQuanLyMuaBanXe.Models
         public string DieuKhoanHopDong { get; set; }
         [Required]
         public decimal TongGiaTriHopDong { get; set; }
+        public string TrangThaiHopDong { get; set; }
 
         public virtual KhachHang KhachHang { get; set; }
         public virtual Xe Xe { get; set; }
