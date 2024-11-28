@@ -35,7 +35,7 @@
                         </a>
                     </li>
                     <li class="w-100">
-                        <a href="#">
+                        <a href="/NhanVien/QuanLyKhoXe">
                             <i class="fa fa-briefcase"></i>
                             Quản lý kho
                         </a>
@@ -66,12 +66,6 @@
                             Trang chủ
                         </a>
                     </li>
-                    <li class="w-100">
-                        <a href="#">
-                            <i class="fa fa-briefcase"></i>
-                            Quản lý kho
-                        </a>
-                    </li>
                     <li class="w-50">
                         <a href="@Url.Action("Logout","User")" class="btn btn-danger text-center"
                            style="width:100%">
@@ -80,70 +74,6 @@
                     </li>
                 </ul>
             </nav>
-
-            <!-- Page Content Holder -->
-            <div id="content">
-                <div class="container">
-                    <div class="card text-center">
-                        <!-- Header -->
-                        <div class="card-header myCardHeader position-relative">
-                            <h3 class="text-center text-primary font-weight-bold">
-                                Danh sách nhân viên
-                            </h3>
-                            <a href="@Url.Action("Register","User")" class="btn btn-primary position-absolute"
-                               id="btnThem"
-                               data-toggle="modal"
-                               data-target="#myModal"
-                               style="right: 10px; bottom: 10px;">
-                                Thêm nhân viên
-                            </a>
-                        </div>
-
-                        <!-- Body -->
-                        <div class="card-body">
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <div class="input-group">
-                                        <input type="text"
-                                               class="form-control"
-                                               placeholder="Loại nhân viên"
-                                               id="searchName" />
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="btnTimNV">
-                                                <button class="btn" onclick="searchStaff()">
-                                                    <i class="fa fa-search"></i>
-                                                </button>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <table class="table table-bordered">
-                                <thead class="text-primary">
-                                    <tr>
-                                        <th style="width:10% ;">Mã nhân viên</th>
-                                        <th style="width:17% ;">Họ và tên</th>
-                                        <th style="width: 17%;">Email</th>
-                                        <th style="width:23% ;">Địa chỉ</th>
-                                        <th style="width: 13%;">Số điện thoại</th>
-                                        <th style="width: 10%;">Chức vụ</th>
-                                        <th style="width: 5%;"><em class="fa fa-cog"></em></th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tableDanhSach"></tbody>
-                            </table>
-                        </div>
-
-                        <!-- Footer -->
-                        <div class="card-footer myCardFooter">
-                            <nav>
-                                <ul class="pagination justify-content-center"
-                                    id="ulPhanTrang"></ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
         }
         @if (role != null && role == "userDonHang")
         {

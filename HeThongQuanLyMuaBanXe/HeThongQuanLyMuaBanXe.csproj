@@ -300,6 +300,14 @@
     <Compile Include="Migrations\202411281025265_AddFavourite.Designer.cs">
       <DependentUpon>202411281025265_AddFavourite.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411281626230_AdjustMaNhanVienToInt.cs" />
+    <Compile Include="Migrations\202411281626230_AdjustMaNhanVienToInt.Designer.cs">
+      <DependentUpon>202411281626230_AdjustMaNhanVienToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411281659009_AdjustMaNhanVienToString.cs" />
+    <Compile Include="Migrations\202411281659009_AdjustMaNhanVienToString.Designer.cs">
+      <DependentUpon>202411281659009_AdjustMaNhanVienToString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CompanyDbContext.cs" />
     <Compile Include="Models\Favourite.cs" />
@@ -353,6 +361,10 @@
     <Content Include="Views\NhanVien\QuanLyDonHang.cshtml" />
     <Content Include="Views\NhanVien\QuanLyNhanVien.cshtml" />
     <Content Include="Views\Favourite\Index.cshtml" />
+    <Content Include="Views\NhanVien\DeleteNV.cshtml" />
+    <Content Include="Views\NhanVien\EditNV.cshtml" />
+    <Content Include="Views\NhanVien\QuanLyKhoXe.cshtml" />
+    <Content Include="Views\Xe\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -378,6 +390,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411281025265_AddFavourite.resx">
       <DependentUpon>202411281025265_AddFavourite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411281626230_AdjustMaNhanVienToInt.resx">
+      <DependentUpon>202411281626230_AdjustMaNhanVienToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411281659009_AdjustMaNhanVienToString.resx">
+      <DependentUpon>202411281659009_AdjustMaNhanVienToString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

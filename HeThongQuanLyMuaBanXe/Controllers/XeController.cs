@@ -1,4 +1,5 @@
-﻿using HeThongQuanLyMuaBanXe.Models;
+﻿using HeThongQuanLyMuaBanXe.Filter;
+using HeThongQuanLyMuaBanXe.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,12 +41,6 @@ namespace HeThongQuanLyMuaBanXe.Controllers
             allProducts = allProducts.Skip(NoOfRecordToSkip).Take(NoOfRecordPerPage).ToList();
             return View(allProducts);
         }
-        public ActionResult Search(string search)
-        {
-
-            return Redirect("/");
-        }
-
         public ActionResult ChiTietSanPham(int? id)
         {
             CompanyDbContext db = new CompanyDbContext();
@@ -55,6 +50,23 @@ namespace HeThongQuanLyMuaBanXe.Controllers
                 return HttpNotFound();
             }
             return View(xeChiTiet);
+        }
+        [AuthFilter]
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Xe xe)
+        {
+            if (ModelState.IsValid)
+            {
+                CompanyDbContext db = new CompanyDbContext();
+                db.Xes.Add(xe);
+                db.SaveChanges();
+                return RedirectToAction("Index", "NhanVien");
+            }
+            return View();
         }
     }
 }

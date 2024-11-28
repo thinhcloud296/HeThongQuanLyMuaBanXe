@@ -43,6 +43,10 @@ namespace HeThongQuanLyMuaBanXe.Controllers
                         {
                             return RedirectToAction("QuanLyDonHang", "NhanVien");
                         }
+                        if (nvCheck.VaiTro == "userKho")
+                        {
+                            return RedirectToAction("QuanLyKhoXe", "NhanVien");
+                        }
                         return RedirectToAction("Index", "NhanVien");
                     }
                 }

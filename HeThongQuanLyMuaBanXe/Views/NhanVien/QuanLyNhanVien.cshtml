@@ -25,23 +25,6 @@
 
             <!-- Body -->
             <div class="card-body">
-                <div class="row mb-3">
-                    <div class="col">
-                        <div class="input-group">
-                            <input type="text"
-                                   class="form-control"
-                                   placeholder="Loại nhân viên"
-                                   id="searchName" />
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="btnTimNV">
-                                    <button class="btn" onclick="searchStaff()">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <table class="table table-bordered">
                     <thead class="text-primary">
                         <tr>
@@ -51,7 +34,8 @@
                             <th style="width:23% ;">Địa chỉ</th>
                             <th style="width: 11%;">Số điện thoại</th>
                             <th style="width: 12%;">Chức vụ</th>
-                            <th style="width: 5%;"><em class="fa fa-cog"></em></th>
+                            <th style="width: 5%;">Sửa</th>
+                            <th style="width: 5%;">Xóa</th>
                         </tr>
                     </thead>
                     <tbody id="tableDanhSach">
@@ -75,7 +59,8 @@
                                 {
                                     <td style="width: 12%;">Quản lý đơn hàng</td>
                                 }
-                                <td style="width: 5%;"><em class="fa fa-cog"></em></td>
+                                <td style="width: 5%;"><a href="@Url.Action("EditNV","NhanVien",new {id=nv.MaNhanVien})" class="fa fa-cog"></a></td>
+                                <th style="width: 5%;"><a href="@Url.Action("DeleteNV","NhanVien",new {id=nv.MaNhanVien})" class="fa fa-trash"></a></th>
                             </tr>
                         }
                     </tbody>

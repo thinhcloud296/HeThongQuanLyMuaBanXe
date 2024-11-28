@@ -1,0 +1,70 @@
+﻿@model List<HeThongQuanLyMuaBanXe.Models.Xe>
+@{
+    ViewBag.Title = "QuanLyKhoXe";
+    Layout = "~/Views/Shared/_LayoutNhanVien2.cshtml";
+}
+
+<!-- Page Content Holder -->
+<div id="content">
+    <div class="container">
+        <div class="card text-center">
+            <!-- Header -->
+            <div class="card-header myCardHeader position-relative">
+                <h3 class="text-center text-primary font-weight-bold">
+                    Danh sách nhân viên
+                </h3>
+                <a href="@Url.Action("Create","Xe")" class="btn btn-primary position-absolute"
+                   id="btnThem"
+                   data-toggle="modal"
+                   data-target="#myModal"
+                   style="right: 10px; bottom: 10px;">
+                    Thêm sản phẩm
+                </a>
+            </div>
+
+            <!-- Body -->
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead class="text-primary">
+                        <tr>
+                            <th style="width:15% ;">Tên xe</th>
+                            <th style="width:10% ;">Hãng xe</th>
+                            <th style="width:10%;">Dòng xe</th>
+                            <th style="width:10% ;">Số khung xe</th>
+                            <th style="width: 10%;">Màu sắc</th>
+                            <th style="width: 10%;">Năm sản xuất</th>
+                            <th style="width: 10%;">Giá bán</th>
+                            <th style="width: 15%;">Mô tả</th>
+                            <th style="width: 10%;">Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableDanhSach">
+                        @foreach (var nv in Model)
+                        {
+                            <tr>
+                                <td style="width:15% ;">@Html.DisplayFor(x => nv.TenXe)</td>
+                                <td style="width:10% ;">@Html.DisplayFor(x => nv.HangXe)</td>
+                                <td style="width: 10%;">@Html.DisplayFor(x => nv.DongXe)</td>
+                                <td style="width:10% ;">@Html.DisplayFor(x => nv.SoKhungXe)</td>
+                                <td style="width: 10%;">@Html.DisplayFor(x => nv.MauSac)</td>
+                                <td style="width: 10%;">@Html.DisplayFor(x => nv.NamSanXuat)</td>
+                                <td style="width: 10%;">@Html.DisplayFor(x => nv.GiaBanXe)</td>
+                                <td style="width: 10%;">@Html.DisplayFor(x => nv.MoTa)</td>
+                                <td style="width: 15%;">@Html.DisplayFor(x => nv.TrangThai)</td>                       
+                                @*<td style="width: 5%;"><a href="@Url.Action("EditNV","NhanVien",new {id=nv.MaNhanVien})" class="fa fa-cog"></a></td>
+                                <th style="width: 5%;"><a href="@Url.Action("DeleteNV","NhanVien",new {id=nv.MaNhanVien})" class="fa fa-trash"></a></th>*@
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- Footer -->
+            <div class="card-footer myCardFooter">
+                <nav>
+                    <ul class="pagination justify-content-center"
+                        id="ulPhanTrang"></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

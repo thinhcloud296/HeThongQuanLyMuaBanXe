@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
 
 namespace HeThongQuanLyMuaBanXe.Models
 {
@@ -23,5 +23,6 @@ namespace HeThongQuanLyMuaBanXe.Models
         [Required]
         public string MatKhau { get; set; }
         public string VaiTro { get; set; }
+
     }
 }
