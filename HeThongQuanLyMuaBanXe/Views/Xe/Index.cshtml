@@ -10,9 +10,9 @@
     List<string> dsMauXe = ViewBag.ColorsOfProduct ?? new List<string>();
 }
 
-<div class="row ">
+<div class="row">
     <p class="col-sm-12" style="font-size:50px; text-indent: 30px; padding-top: 50px">Các dòng siêu xe</p>
-    <div class="col-sm-12 d-flex boLoc_DongXe" style="padding-left:50px">
+    <div class="col-sm-12 d-flex boLoc_DongXe position-relative" style="padding-left:50px">
         <div>
             <a href="@Url.Action("Index", "Xe", new { dongXe = (string)null })">Tất cả dòng xe</a>
         </div>
@@ -22,10 +22,15 @@
                 <a href="@Url.Action("Index", "Xe", new { dongXe = dong })">@dong</a>
             </div>
         }
+        @using (Html.BeginForm("Index", "Xe", FormMethod.Post, new { @class = "border-0 d-none form-control d-xl-flex w-25 position-absolute", style = "padding-left:50px;right:10px" }))
+        {
+            @Html.TextBox("Search", ViewBag.Search as string, new { @class = "form-control w-auto", spellcheck = "false", placeholder = "Tìm kiếm", style = "margin-right:5px" });
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        }
     </div>
 </div>
 
-<div class="row ">
+<div class="row">
     <div class="col-sm-2 boLoc_MauXe">
         <p class="h4" style="text-indent: 30px; padding-top:10px; margin:0;"><strong>Màu sắc</strong></p>
         @using (Html.BeginForm("Index", "Xe", FormMethod.Get, new { style = "padding:10px 55px" }))
@@ -42,9 +47,56 @@
             </div>
         }
     </div>
-    <div class="col-sm-10" style="padding-top: 10px;">
+    <div class="col-sm-10 checkPointDSXe" style="padding-top: 10px;">
         @{
             Html.RenderPartial("DanhSachXe", Model);
         }
+    </div>
+    <div class="col-12"><br /></div>
+    <div class="col-2"></div>
+    <div class="col-sm-10 d-flex justify-content-center align-items-center">
+        @{
+            int PrevPage = ViewBag.Trang - 1;
+            if (PrevPage <= 0)
+            {
+                PrevPage = 1;
+            }
+            int NextPage = ViewBag.Trang + 1;
+            if (NextPage > ViewBag.NoOfPages)
+            {
+                NextPage = ViewBag.NoOfPages;
+            }
+        }
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="/xe/index?trang=@PrevPage#checkPointDSXe">
+                    Trước
+                </a>
+            </li>
+            @for (int i = 0; i < ViewBag.NoOfPages; i++)
+            {
+                if (i + 1 == ViewBag.Trang)
+                {
+                    <li class="page-item active">
+                        <a class="page-link" href="/xe/index?trang=@(i+1)#checkPointDSXe">
+                            @(i+1)
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="/xe/index?trang=@(i+1)#checkPointDSXe">
+                            @(i+1)
+                        </a>
+                    </li>
+                }
+            }
+            <li class="page-item">
+                <a class="page-link" href="/xe/index?trang=@NextPage#checkPointDSXe">
+                    Tiếp
+                </a>
+            </li>
+        </ul>
     </div>
 </div>

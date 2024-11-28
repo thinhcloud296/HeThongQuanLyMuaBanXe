@@ -10,15 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <link rel="stylesheet" href="~/Content/font.css" />
-    <link rel="stylesheet" href="~/Content/main.css?v=1.5" type="text/css">
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
           rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
           rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="~/Content/font.css" />
+    <link rel="stylesheet" href="~/Content/main.css?v=1.7" type="text/css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 
@@ -41,17 +41,10 @@
             </nav>
             <a style="width:auto;height:auto;" class="d-flex justify-content-center align-items-center" href=@Url.Action("Index","Home")>
                 <img class="" style="width:50%; height: auto;" src="~/Images/logoautodrive.jpg" alt="">
-            </a>
-            @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { @class = "d-none form-control d-xl-flex w-25 position-absolute", style = "padding-left:50px;background-color:black;border-color:black;right:170px" }))
-            {
-                @Html.TextBox("Search", ViewBag.Search as string, new { @class = "form-control w-auto", spellcheck = "false", placeholder = "Tìm kiếm", style = "margin-right:5px" });
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            }
-
+            </a>            
             @* Menu ẩn *@
 
-            <a class="navbar-burger d-xl-none d-flex z-3" onclick="toggleMenu()"><img src="@Url.Content("~/Images/menu.jpg")" alt="Menu Icon"></a>
-            <!-- Menu khi click vào icon burger -->
+            <a class="navbar-burger d-xl-none d-flex z-3" onclick="toggleMenu()"><img src="@Url.Content("~/Images/menu.jpg")" alt="Menu Icon"></a>            
             <nav class="menu">
                 <a href="/home/index" class="hover-a" style="font-weight: bold;animation-delay: 0.1s">TRANG CHỦ</a>
                 <a href="/home/sanpham" class="hover-a" style="font-weight: bold;animation-delay: 0.1s">SẢN PHẨM</a>
@@ -77,7 +70,7 @@
     </div>
     <script type="text/javascript">
         const toggleMenu = () => {
-            document.querySelector('.navbar-burger').classList.toggle('open');  // Xoay burger
+            document.querySelector('.navbar-burger').classList.toggle('open'); 
             document.body.classList.toggle("open");
         };
 

@@ -63,17 +63,17 @@
                                     <input type="text" name="HoTenKhachHang" value="@(khachHang != null ? khachHang.HoTenKhachHang : "Không tìm thấy")" />
                                 </td>
 
-                                <!-- Số điện thoại (input để chỉnh sửa) -->
+                                <!-- Số điện thoại  -->
                                 <td>
                                     <input type="text" name="SoDienThoaiKhachHang" value="@(khachHang != null ? khachHang.SoDienThoaiKhachHang : "Không tìm thấy")" />
                                 </td>
 
-                                <!-- Email (input để chỉnh sửa) -->
+                                <!-- Email  -->
                                 <td>
                                     <input type="email" name="EmailKhachHang" value="@(khachHang != null ? khachHang.EmailKhachHang : "Không tìm thấy")" />
                                 </td>
 
-                                <!-- Địa chỉ (input để chỉnh sửa) -->
+                                <!-- Địa chỉ  -->
                                 <td>@khachHang.DiaChiKhachHang</td>
                                 <td>@item.MaXe</td>
                                 <td>@item.NgayLapHopDong</td>
@@ -99,7 +99,7 @@
             <script type="text/javascript">
 function changeStatus(maHopDong, newStatus) {
     $.ajax({
-        url: '@Url.Action("ChangeStatus", "NhanVien")', // Đường dẫn tới action ChangeStatus trong controller
+        url: '@Url.Action("ChangeStatus", "NhanVien")',
         type: 'POST',
         data: {
             maHopDong: maHopDong,
@@ -107,8 +107,8 @@ function changeStatus(maHopDong, newStatus) {
         },
         success: function (response) {
             if (response.success) {
-                // Cập nhật lại trạng thái trên giao diện
-                location.reload(); // Tải lại trang để xem thay đổi
+               
+                location.reload(); 
             } else {
                 alert("Có lỗi xảy ra khi cập nhật trạng thái.");
             }
@@ -122,8 +122,8 @@ function changeStatus(maHopDong, newStatus) {
 
             <style>
                 a {
-                    color: inherit !important; /* Để không sử dụng màu sắc đặc biệt */
-                    text-decoration: none !important; /* Để không có gạch dưới */
+                    color: inherit !important; 
+                    text-decoration: none !important; 
                 }
 
                 #sidebar {

@@ -10,25 +10,22 @@
     --Hover-icon: #FF9B42;
 }
 
-/* Tùy chỉnh thanh cuộn tổng thể */
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 12px;
 }
 
-/* Tùy chỉnh track của thanh cuộn (khu vực mà thumb di chuyển trên đó) */
 ::-webkit-scrollbar-track {
     background-color: lightgray;
     border-radius: 20px;
 }
 
-/* Tùy chỉnh thumb của thanh cuộn (phần có thể kéo được) */
 ::-webkit-scrollbar-thumb {
     background-color: dimgrey;
     border-radius: 10px;
 }
 
-    /* Tùy chỉnh thumb khi hover chuột */
     ::-webkit-scrollbar-thumb:hover {
         background-color: darkslategrey;
     }
@@ -177,12 +174,10 @@
 }
 
 body.open .menu {
-    transform: translateX(0); /* Di chuyển menu vào màn hình */
+    transform: translateX(0);
     opacity: 1;
     visibility: visible;
 }
-
-/* Liên kết trong menu */
 
 .menu > a {
     color: #f9f9f9;
@@ -195,46 +190,42 @@ body.open .menu > a {
     animation: appear 0.3s both;
 }
 
-/* Tạo hiệu ứng underline cho link trong menu */
 .menu a::after {
     position: absolute;
     content: "";
     width: 0;
     height: 3px;
-    background-color: var(--Hover-icon); /* Đổi màu theo biến hover-icon */
-    left: 0;
-    bottom: 0;
-    transition: all 0.4s ease-in-out;
-}
-/* Tạo hiệu ứng underline cho link trong menu khi bấm */
-.menu a::after {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 3px;
-    background-color: var(--Hover-icon); /* Đổi màu theo biến hover-icon */
+    background-color: var(--Hover-icon);
     left: 0;
     bottom: 0;
     transition: all 0.4s ease-in-out;
 }
 
-/* Đổi màu của chữ khi bấm vào */
+.menu a::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: var(--Hover-icon);
+    left: 0;
+    bottom: 0;
+    transition: all 0.4s ease-in-out;
+}
+
 .menu a:active {
     color: var(--Hover-icon);
 }
 
-    /* Nếu có phần tử .angle-down trong <a>, thay đổi màu khi bấm vào */
     .menu a:active .angle-down {
         color: var(--Hover-icon);
     }
-/* Định dạng ban đầu của .navbar-burger */
+
 .navbar-burger {
     cursor: pointer;
     z-index: 20;
     transition: transform 0.3s ease;
 }
 
-    /* Định dạng cho hình ảnh bên trong burger */
     .navbar-burger img {
         z-index: 3;
         display: grid;
@@ -247,18 +238,16 @@ body.open .menu > a {
         transition: transform 0.3s ease;
     }
 
-    /* Khi class 'open' được thêm vào (tức là khi menu mở), hình ảnh burger sẽ xoay thành dấu 'X' */
+
     .navbar-burger.open img {
-        transform: rotate(90deg); /* Xoay 90 độ khi mở */
+        transform: rotate(90deg);
     }
 
-/* Ẩn menu ban đầu, khi mở thì menu sẽ hiện */
 
 .menu.open {
     display: flex;
 }
 
-/* Các liên kết trong menu */
 .menu a {
     color: white;
     text-decoration: none;
@@ -283,21 +272,18 @@ body.open .menu > a {
     }
 }
 /*===================================================================================*/
-
-
-
 /* phần slide */
 .banner {
     width: 100%;
     height: 850px;
-    overflow: hidden; /* Đảm bảo ảnh không vượt quá khung chứa */
+    overflow: hidden;
     bottom: -18px;
 }
 
     .banner img {
         width: 100%;
-        height: 100%; /* Đảm bảo ảnh lấp đầy khung */
-        object-fit: cover; /* Giữ tỉ lệ ảnh và lấp đầy khung mà không bị méo */
+        height: 100%;
+        object-fit: cover;
     }
 
     .banner .in-content {
@@ -343,7 +329,6 @@ body.open .menu > a {
         cursor: pointer;
     }
 
-/* nút chuyển slide */
 #left, #right {
     /* display: none; */
     opacity: 0;
@@ -356,7 +341,6 @@ body.open .menu > a {
     transition: 0.5s;
 }
 
-/* Vị trí nút chuyển slide */
 #left {
     position: absolute;
     top: 50%;
@@ -390,13 +374,11 @@ body.open .menu > a {
         font-size: 20px;
     }
 
-/* hiện nút chuyển slide */
 .banner:hover #left, .banner:hover #right {
     opacity: 1;
     display: block;
 }
 
-/* Hiệu ứng chuyển động nội dung Design for life */
 .tran-box {
     transition: 1s;
 }
@@ -556,7 +538,7 @@ body.open .menu > a {
     .box-product img {
         width: 100%;
         height: 80%;
-        object-fit: cover; /* Đảm bảo ảnh giữ tỉ lệ và lấp đầy khung */
+        object-fit: cover;
         border-radius: 80px;
         object-fit: cover;
         object-position: center;
@@ -816,9 +798,9 @@ body.open .menu > a {
 }
 
     .buttom-1 button {
-        width: 170px;
+        width: fit-content;
         height: 30px;
-        padding: 0 0px;
+        padding: 0px 10px;
         font-size: 12px;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -1200,7 +1182,7 @@ body.open .menu > a {
 }
 
     .box-second-footer .first-box, .box-second-footer .second-box {
-        width: 50%; /* Điều chỉnh để phần tử tự chia không gian */
+        width: 50%;
         padding: 10px 15px;
         line-height: 2.5;
     }
@@ -1321,8 +1303,8 @@ body.open .menu > a {
     padding: 0;
     margin: 0;
     position: relative;
-    height: auto; /* Full chiều cao màn hình */
-    overflow: hidden; /* Ẩn phần bị tràn ra ngoài */
+    height: auto;
+    overflow: hidden;
 }
 
 .footer-slideshow {
@@ -1334,23 +1316,23 @@ body.open .menu > a {
 
 #footer-images {
     display: flex;
-    width: 600%; /* Chiều rộng của container bao gồm tất cả hình ảnh */
-    height: 100%; /* Đảm bảo chiều cao của container là 100% */
-    animation: slide 110s infinite linear; /* Animation chạy liên tục */
+    width: 600%;
+    height: 100%;
+    animation: slide 110s infinite linear;
 }
 
     #footer-images img {
-        width: 16.666%; /* Mỗi ảnh chiếm 1/6 chiều rộng của container */
-        height: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều cao của footer */
-        object-fit: cover; /* Đảm bảo ảnh được cắt tỉ lệ đúng mà không bị bóp méo */
+        width: 16.666%;
+        height: 100%;
+        object-fit: cover;
     }
 
 @keyframes slide {
     0% {
-        transform: translateX(0); /* Vị trí ban đầu */
+        transform: translateX(0);
     }
 
     100% {
-        transform: translateX(-50%); /* Di chuyển qua lại 50% chiều rộng container */
+        transform: translateX(-50%);
     }
 }

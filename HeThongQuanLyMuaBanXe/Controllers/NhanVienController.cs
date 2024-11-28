@@ -12,7 +12,6 @@ namespace HeThongQuanLyMuaBanXe.Controllers
     {
         // GET: NhanVien
          CompanyDbContext db = new CompanyDbContext();
-        // GET: NhanVien
         [AuthFilter]
         public ActionResult Index()
         {
@@ -33,27 +32,19 @@ namespace HeThongQuanLyMuaBanXe.Controllers
         }
         public ActionResult QuanLyDonHang()
         {
-            // Lấy danh sách hợp đồng mua bán
             var hopDongList = db.HopDongMuaBans.ToList();
             var khachHangList = db.KhachHangs.ToList();
-
-            // Gán dữ liệu vào ViewBag
             ViewBag.HopDongList = hopDongList;
             ViewBag.KhachHangList = khachHangList;
-
-            return View(hopDongList); // Trả về view hiển thị danh sách hợp đồng
+            return View(hopDongList); 
         }
-        //thay đổi phê duyệt hợp đồng
         [HttpPost]
         public ActionResult ChangeStatus(string maHopDong, string newStatus)
         {
-            // Tìm hợp đồng theo mã hợp đồng
             var hopDong = db.HopDongMuaBans.SingleOrDefault(h => h.MaHopDong.ToString() == maHopDong);
             if (hopDong != null)
             {
-                // Cập nhật trạng thái hợp đồng
                 hopDong.TrangThaiHopDong = newStatus;
-                // Lưu thay đổi vào cơ sở dữ liệu
                 db.SaveChanges();
                 return Json(new { success = true });
             }

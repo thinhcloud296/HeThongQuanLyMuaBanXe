@@ -118,9 +118,9 @@
     <Content Include="Content\font.css" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\main.css" />
-    <Content Include="Content\mainQLNV.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Style.css" />
+    <Content Include="Content\StyleQLDonHang.css" />
     <Content Include="Content\styleQLNV.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\1.jpg" />
@@ -134,6 +134,7 @@
     <Content Include="Images\732fa2_8a33cfd9076f4a728e13b51f16f2efed~mv2.jpg" />
     <Content Include="Images\audiR8.jpg" />
     <Content Include="Images\August-Motorcars-Supercar-Showroom.jpg" />
+    <Content Include="Images\backgroundQuanLy.jpg" />
     <Content Include="Images\close.jpg" />
     <Content Include="Images\corvette.jpg" />
     <Content Include="Images\dc35efe6a78d48e99fc915c167249cfd.jpg" />
@@ -168,6 +169,7 @@
     <Content Include="Images\Screenshot 2024-11-07 213142.jpg" />
     <Content Include="Images\Screenshot 2024-11-07 220012.jpg" />
     <Content Include="Images\sf90.jpg" />
+    <Content Include="Images\showroomBackgruond.jpg" />
     <Content Include="Images\Xe0013_1.jpg" />
     <Content Include="Images\Xe0013_2.jpg" />
     <Content Include="Images\Xe0013_3.jpg" />
