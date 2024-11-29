@@ -135,6 +135,14 @@
     <Content Include="Images\audiR8.jpg" />
     <Content Include="Images\August-Motorcars-Supercar-Showroom.jpg" />
     <Content Include="Images\backgroundQuanLy.jpg" />
+    <Content Include="Images\blog1.jpg" />
+    <Content Include="Images\blog2.jpg" />
+    <Content Include="Images\blog3.jpg" />
+    <Content Include="Images\blog4.jpg" />
+    <Content Include="Images\blog5.jpg" />
+    <Content Include="Images\blog6.jpg" />
+    <Content Include="Images\blog7.jpg" />
+    <Content Include="Images\blog8.jpg" />
     <Content Include="Images\close.jpg" />
     <Content Include="Images\corvette.jpg" />
     <Content Include="Images\dc35efe6a78d48e99fc915c167249cfd.jpg" />
@@ -267,9 +275,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\DichVuController.cs" />
     <Compile Include="Controllers\FavouriteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HopDongController.cs" />
+    <Compile Include="Controllers\LienHeController.cs" />
+    <Compile Include="Controllers\NhaCungCapController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\XeController.cs" />
@@ -377,6 +389,8 @@
     <Content Include="Views\Xe\Edit.cshtml" />
     <Content Include="Views\HopDong\Index.cshtml" />
     <Content Include="Views\HopDong\Create.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\LienHe\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -419,7 +433,10 @@
       <DependentUpon>202411290204376_DeleteSomeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\DichVu\" />
+    <Folder Include="Views\NhaCungCap\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

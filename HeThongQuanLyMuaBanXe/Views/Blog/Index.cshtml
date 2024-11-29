@@ -1,0 +1,285 @@
+﻿@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+    }
+
+    .container {
+        padding-top: 50px;
+    }
+
+    .blog-entry {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        margin-bottom: 30px;
+    }
+
+    .block-20 {
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+    }
+
+    .text {
+        padding: 20px;
+    }
+
+    .meta {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 10px;
+    }
+
+        .meta a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+            .meta a:hover {
+                text-decoration: underline;
+            }
+
+    .heading {
+        font-size: 22px;
+        margin-top: 15px;
+        color: #333;
+    }
+
+        .heading a {
+            color: #333;
+            text-decoration: none;
+        }
+
+            .heading a:hover {
+                color: #007bff;
+            }
+
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .btn-primary {
+        background-color: #000000 !important;
+        border-color: #000000 !important;
+        color: #fff !important;
+    }
+
+        .btn-primary:hover {
+            background-color: #333333;
+            border-color: #333333;
+            color: #fff;
+        }
+
+    .icon-long-arrow-right {
+        margin-left: 8px;
+    }
+    /* Animation  */
+    .ftco-animate {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+        .ftco-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+    @@keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+
+            <!-- Blog 1: McLaren W1 -->
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry justify-content-end mb-md-5">
+                    <a href="blog-single.html" class="block-20 img">
+                        <img src="@Url.Content("~/images/blog1.jpg")" alt="McLaren W1" class="img-fluid" style="border-radius: 8px; width: 100%; height: auto;">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Oct. 29, 2019</a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">McLaren W1 - siêu xe mới giá 2,1 triệu USD</a></h3>
+                        <p>Sau F1 và P1, W1 xuất hiện nhằm tiếp nối truyền thống với danh nghĩa siêu xe đầu bảng của McLaren...</p>
+                        <p><a href="#" class="btn btn-primary">xem thêm <span class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog 2: Lamborghini Temerario -->
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry justify-content-end mb-md-5">
+                    <a href="blog-single.html" class="block-20 img">
+                        <img src="@Url.Content("~/images/blog2.jpg")" alt="Lamborghini Temerario" class="img-fluid" style="border-radius: 8px; width: 100%; height: auto;">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Oct. 29, 2019</a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">Lamborghini Temerario - siêu xe hybrid kế nhiệm Huracan</a></h3>
+                        <p>Lamborghini Huracan ra mắt lần đầu vào năm 2013 với ngôn ngữ thiết kế phát triển từ Gallardo...</p>
+                        <p><a href="#" class="btn btn-primary">xem thêm  <span class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog 3: Ferrari 488 Pista -->
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry justify-content-end mb-md-5">
+                    <a href="blog-single.html" class="block-20 img">
+                        <img src="@Url.Content("~/images/blog3.jpg")" alt="Ferrari 488 Pista" class="img-fluid" style="border-radius: 8px; width: 100%; height: auto;">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Nov. 2, 2019</a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">Ferrari 488 Pista - Vượt qua mọi giới hạn</a></h3>
+                        <p>Ferrari 488 Pista được thiết kế để khẳng định danh hiệu siêu xe mạnh mẽ và tốc độ vượt trội...</p>
+                        <p><a href="#" class="btn btn-primary">xem thêm  <span class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog 4: Porsche 911 Turbo S -->
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry justify-content-end mb-md-5">
+                    <a href="blog-single.html" class="block-20 img">
+                        <img src="@Url.Content("~/images/blog4.jpg")" alt="Porsche 911 Turbo S" class="img-fluid" style="border-radius: 8px; width: 100%; height: auto;">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Nov. 5, 2019</a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">Porsche 911 Turbo S - Chinh phục mọi con đường</a></h3>
+                        <p>Porsche 911 Turbo S được xem là sự kết hợp hoàn hảo giữa sức mạnh và thiết kế tinh tế, luôn giữ được sự sang trọng...</p>
+                        <p><a href="#" class="btn btn-primary">xem thêm  <span class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog 5: Bugatti Chiron Super Sport 300+ -->
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry justify-content-end mb-md-5">
+                    <a href="blog-single.html" class="block-20 img">
+                        <img src="@Url.Content("~/images/blog5.jpg")" alt="Bugatti Chiron Super Sport 300+" class="img-fluid" style="border-radius: 8px; width: 100%; height: auto;">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Nov. 10, 2019</a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">Bugatti Chiron Super Sport 300+ - Tốc độ vượt trội</a></h3>
+                        <p>Bugatti Chiron Super Sport 300+ không chỉ là siêu xe, mà là biểu tượng của tốc độ tối thượng...</p>
+                        <p><a href="#" class="btn btn-primary">xem thêm  <span class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog 6: Aston Martin DBS Superleggera -->
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry justify-content-end mb-md-5">
+                    <a href="blog-single.html" class="block-20 img">
+                        <img src="@Url.Content("~/images/blog6.jpg")" alt="Aston Martin DBS Superleggera" class="img-fluid" style="border-radius: 8px; width: 100%; height: auto;">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Nov. 15, 2019</a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">Aston Martin DBS Superleggera - Siêu xe đẳng cấp</a></h3>
+                        <p>Aston Martin DBS Superleggera mang trong mình một thiết kế sang trọng và công nghệ tối tân, kết hợp giữa vẻ đẹp và sức mạnh...</p>
+                        <p><a href="#" class="btn btn-primary">xem thêm  <span class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog 7: Bugatti Tourbillon -->
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry justify-content-end mb-md-5">
+                    <a href="blog-single.html" class="block-20 img">
+                        <img src="@Url.Content("~/images/blog7.jpg")" alt="Bugatti Tourbillon" class="img-fluid" style="border-radius: 8px; width: 100%; height: auto;">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Oct. 29, 2019</a></div>
+
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">Bugatti Tourbillon - một kiệt tác của giới đồng hồ và siêu xe</a></h3>
+                        <p>Bugatti Tourbillon được ra mắt trong khuôn khổ triển lãm đồng hồ Genève 2024 với giá lên tới 1,7 triệu USD. Đồng hồ này được sản xuất dưới sự hợp tác giữa Bugatti và hãng chế tác đồng hồ Parmigiani Fleurier, với bộ máy Tourbillon đặc biệt.</p>
+                        <p><a href="#" class="btn btn-primary">xem thêm  <span class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog 8: Koenigsegg Jesko Absolut -->
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry justify-content-end mb-md-5">
+                    <a href="blog-single.html" class="block-20 img">
+                        <img src="@Url.Content("~/images/blog8.jpg")" alt="Koenigsegg Jesko Absolut" class="img-fluid" style="border-radius: 8px; width: 100%; height: auto;">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Oct. 29, 2019</a></div>
+
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">Koenigsegg Jesko Absolut - xe cực tốc 500 km/h</a></h3>
+                        <p>Siêu xe Koenigsegg Jesko Absolut được mệnh danh là chiếc xe nhanh nhất thế giới với khả năng đạt tốc độ lên tới 500 km/h, phá vỡ các kỷ lục của các hãng xe khác. Jesko Absolut là mẫu xe mới nhất của Koenigsegg trong dòng xe hypercar của mình.</p>
+                        <p><a href="#" class="btn btn-primary">xem thêm  <span class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const elements = document.querySelectorAll('.ftco-animate');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
