@@ -1,0 +1,176 @@
+﻿@model List<HeThongQuanLyMuaBanXe.Models.ThongTinDichVu>
+@using HeThongQuanLyMuaBanXe.Controllers
+@{
+    ViewBag.Title = "Dịch Vụ";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Dịch Vụ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: url('@Url.Content("~/images/blog4.jpg")');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .container {
+            margin: 50px auto;
+            max-width: 1200px;
+            padding: 0 15px;
+        }
+
+        .service-card {
+            background-color: #1e1e1e;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+            min-height: 380px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .service-image img:hover {
+            transform: scale(1.1);
+        }
+
+        .service-info {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+      
+        .service-info h3 {
+            font-size: 1rem;
+            color: #f39c12;
+            font-weight: bold;
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 50px; 
+            line-height: 50px; 
+        }
+
+        .service-info p {
+            color: #bbb;
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: block; 
+            padding: 10px 20px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            background-color: #f39c12;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 20px auto 0;  
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .col-md-4 {
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            min-width: 300px; 
+        }
+
+        @@media (max-width: 768px) {
+            .col-md-4 {
+                flex: 1 1 calc(100% - 20px);
+            }
+        }
+
+        footer {
+            background-color: #121212;
+            color: #bbb;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <h1 class="animate__animated animate__fadeInDown">Dịch Vụ</h1>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            @foreach (var ThongTinDichVu in Model)
+            {
+                <div class="col-md-4">
+                    <div class="service-card animate__animated animate__fadeInUp">
+                        <div class="service-image">
+                            <img src="@Url.Content("~/Images/" + ThongTinDichVu.AnhDichVu)" alt="@ThongTinDichVu.TenDichVu">
+                        </div>
+                        <div class="service-info">
+                            <h3>@ThongTinDichVu.TenDichVu</h3>
+                            <a href="@Url.Action("ChiTietDichVu", "DichVu", new { id = ThongTinDichVu.MaDichVu })" class="btn">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hệ Thống Quản Lý Mua Bán Xe. Tất cả quyền được bảo vệ.</p>
+    </footer>
+</body>
+</html>

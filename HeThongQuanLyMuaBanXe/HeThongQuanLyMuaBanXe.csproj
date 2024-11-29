@@ -146,6 +146,14 @@
     <Content Include="Images\close.jpg" />
     <Content Include="Images\corvette.jpg" />
     <Content Include="Images\dc35efe6a78d48e99fc915c167249cfd.jpg" />
+    <Content Include="Images\dichvu1.jpg" />
+    <Content Include="Images\dichvu2.jpg" />
+    <Content Include="Images\dichvu3.jpg" />
+    <Content Include="Images\dichvu4.jpg" />
+    <Content Include="Images\dichvu5.jpg" />
+    <Content Include="Images\dichvu6.jpg" />
+    <Content Include="Images\dichvu7.jpg" />
+    <Content Include="Images\dichvu8.jpg" />
     <Content Include="Images\DS102853_480x480.jpg" />
     <Content Include="Images\DS103882_2_480x480.jpg" />
     <Content Include="Images\ea047f6136a932aceb21459f111aa058.jpg" />
@@ -397,6 +405,10 @@
     <Content Include="Views\HopDong\Create.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\LienHe\Index.cshtml" />
+    <Content Include="Views\DichVu\Index.cshtml" />
+    <Content Include="Views\DichVu\ChiTietDichVu.cshtml" />
+    <Content Include="Views\NhaCungCap\Index.cshtml" />
+    <Content Include="Views\NhaCungCap\ChiTietNhaCungCap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -442,10 +454,7 @@
       <DependentUpon>202411291112131_AddNhaCCAndTTDV.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\DichVu\" />
-    <Folder Include="Views\NhaCungCap\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
