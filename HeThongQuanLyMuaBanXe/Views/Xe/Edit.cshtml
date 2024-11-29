@@ -20,11 +20,12 @@
     <div class="wrapper">
         <div class="login_box row w-75">
             <div class="col-4 login-header">
-                <span>Thông tin nhân viên</span>
+                <span>Thông tin xe</span>
             </div>
             @* ------------------------------------------------------------- *@
-            @using (Html.BeginForm("Create", "Xe", FormMethod.Post, new { @class = "row" }))
+            @using (Html.BeginForm("Edit", "Xe", FormMethod.Post, new { @class = "row" }))
             {
+                <input type="hidden" id="MaXe" name="MaXe" value="@Model.MaXe" />
                 <div class="col-6 input_box">
                     @Html.TextBoxFor(row => row.TenXe, new { @class = "input-field", placeholder = " ", required = "required" })
 
@@ -117,33 +118,6 @@
                     <i class="bx bx-user icon"></i>
                 </div>
 
-                <div class="col-6 input_box">
-                    <input type="file" name="imageFile" id="imageFile" class=" input-field" />
-
-                    @Html.LabelFor(row => row.HinhAnh, "Ảnh 1", new { @class = "label" })
-                    <i class="bx bx-user icon"></i>
-                </div>
-
-                <div class="col-6 input_box">
-                    <input type="file" name="imageFile2" id="imageFile2" class=" input-field" />
-
-                    @Html.LabelFor(row => row.HinhAnh2, "Ảnh 2", new { @class = "label" })
-                    <i class="bx bx-user icon"></i>
-                </div>
-
-                <div class="col-6 input_box">
-                    <input type="file" name="imageFile3" id="imageFile3" class=" input-field" />
-
-                    @Html.LabelFor(row => row.HinhAnh3, "Ảnh 3", new { @class = "label" })
-                    <i class="bx bx-user icon"></i>
-                </div>
-
-                <div class="col-6 input_box">
-                    <input type="file" name="imageFile4" id="imageFile4" class=" input-field" />
-
-                    @Html.LabelFor(row => row.HinhAnh4, "Ảnh 4", new { @class = "label" })
-                    <i class="bx bx-user icon"></i>
-                </div>
 
                 <div class="input_box d-flex flex-row justify-content-center">
                     <button style="border-radius:10px;text-decoration: none; color: black; width: fit-content; padding: 10px 12px" type="submit" class="input-submit">Chỉnh sửa</button>&nbsp;
