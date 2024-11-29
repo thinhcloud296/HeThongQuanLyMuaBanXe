@@ -37,35 +37,22 @@
                                 <tr>
                                     <th style="width:5% ;">STT</th>
                                     <th style="width:35% ;">Tên sản phẩm</th>
-                                    <th style="width:15% ;">Số lượng</th>
-                                    <th style="width:40%;">Tổng thành tiền (Giá gốc)</th>
+                                    <th style="width:35%;">Tổng thành tiền (Giá gốc)</th>
+                                    <th style="width:20% ;">Tạo hợp đồng thanh toán</th>
                                     <th style="width: 5%;"></th>
                                 </tr>
                             </thead>
                             <tbody id="tableDanhSach">
-                                @{int i = 1; int totPrice = 0;}
-
+                                @{int i = 1;}
                                 @foreach (var item in Model)
                                 {
                                     <tr class="text-center">
                                         <td style="width:5% ;">@i</td>
                                         <td style="width:35% ;" class="text-start">@item.Xe.TenXe</td>
-                                        <td style="width:15% ;">
-                                            @using (Html.BeginForm("UpdateQuantity", "Favourite", FormMethod.Get))
-                                            {
-                                                <input type="number" value="@item.SoLuong" name="quan" min="1" style="width: 70px;" />
-                                                <input type="hidden" name="proid" value="@item.MaXe" />
-                                                <input type="submit" value="Cập nhật" class="btn btn-primary" />
-                                            }
-                                        </td>
                                         <td style="width:40% ;">
-                                            @{
-                                                int Price = item.SoLuong * (int)item.Xe.GiaBanXe;
-                                                totPrice += Price;
-                                                i++;
-                                            }
-                                            @Price.ToString() $
+                                            @item.Xe.GiaBanXe;
                                         </td>
+                                        <th style="width:20% ;"><a href="/hopdong/index?MaXe=@item.Xe.MaXe">Đến trang thanh toán</a></th>
                                         <th style="width: 5%;"><a style="line-height:20px" href="/Favourite/Delete/@item.MaXe" class="fa fa-trash"></a></th>
                                     </tr>
                                 }
