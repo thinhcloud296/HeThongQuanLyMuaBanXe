@@ -1,6 +1,5 @@
 ﻿@{
     var tenNVDangDangNhap = HttpUtility.UrlDecode(Context.Request.Cookies["name"]?.Value, System.Text.Encoding.UTF8);
-
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -28,32 +27,34 @@
             <nav class="box-menu d-xl-block d-none w-50">
                 <ul style="margin:0;" class="all-list-menu">
                     <li>
-                        <a href="/home/index" class="hover-a fs-5" style="font-weight: bold">TRANG CHỦ</a>
-                    </li>
-                    <li class="padding-list-menu">
-                        <a href="/xe/index" class="hover-a fs-5" style="font-weight: bold">SẢN PHẨM</a>
+                        @*<a href="/home/index" class="hover-a fs-6" style="font-weight: bold">TRANG CHỦ</a>*@
+                        <a href="/home/index" class="hover-a fs-6" style="font-weight: bold; font-size: 18px;">TRANG CHỦ</a>
 
                     </li>
                     <li class="padding-list-menu">
-                        <a href="/nhacungcap/index" class="hover-a fs-5" style="font-weight: bold">ĐỐI TÁC</a>
+                        <a href="/xe/index" class="hover-a fs-6" style="font-weight: bold">SẢN PHẨM</a>
+
                     </li>
                     <li class="padding-list-menu">
-                        <a href="/dichvu/index" class="hover-a fs-5" style="font-weight: bold">DỊCH VỤ</a>
+                        <a href="/nhacungcap/index" class="hover-a fs-6" style="font-weight: bold">ĐỐI TÁC</a>
                     </li>
                     <li class="padding-list-menu">
-                        <a href="/lienhe/index" class="hover-a fs-5" style="font-weight: bold">LIÊN HỆ</a>
+                        <a href="/dichvu/index" class="hover-a fs-6" style="font-weight: bold">DỊCH VỤ</a>
                     </li>
                     <li class="padding-list-menu">
-                        <a href="/blog/index" class="hover-a fs-5" style="font-weight: bold">BLOG</a>
+                        <a href="/lienhe/index" class="hover-a fs-6" style="font-weight: bold">LIÊN HỆ</a>
+                    </li>
+                    <li class="padding-list-menu">
+                        <a href="/blog/index" class="hover-a fs-6" style="font-weight: bold">BLOG</a>
                     </li>
                 </ul>
             </nav>
             <a style="width:auto;height:auto;" class="d-flex justify-content-center align-items-center" href=@Url.Action("Index","Home")>
                 <img class="" style="width:50%; height: auto;" src="~/Images/logoautodrive.jpg" alt="">
-            </a>            
+            </a>
             @* Menu ẩn *@
 
-            <a class="navbar-burger d-xl-none d-flex z-3" onclick="toggleMenu()"><img src="@Url.Content("~/Images/menu.jpg")" alt="Menu Icon"></a>            
+            <a class="navbar-burger d-xl-none d-flex z-3" onclick="toggleMenu()"><img src="@Url.Content("~/Images/menu.jpg")" alt="Menu Icon"></a>
             <nav class="menu">
                 <a href="/home/index" class="hover-a" style="font-weight: bold;animation-delay: 0.1s">TRANG CHỦ</a>
                 <a href="/home/sanpham" class="hover-a" style="font-weight: bold;animation-delay: 0.1s">SẢN PHẨM</a>
@@ -79,7 +80,7 @@
     </div>
     <script type="text/javascript">
         const toggleMenu = () => {
-            document.querySelector('.navbar-burger').classList.toggle('open'); 
+            document.querySelector('.navbar-burger').classList.toggle('open');
             document.body.classList.toggle("open");
         };
 

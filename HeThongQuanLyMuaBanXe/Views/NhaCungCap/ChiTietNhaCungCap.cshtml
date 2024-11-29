@@ -1,8 +1,82 @@
-﻿
+﻿@model HeThongQuanLyMuaBanXe.Models.NhaCungCap
+
 @{
-    ViewBag.Title = "ChiTietNhaCungCap";
+    ViewBag.Title = "Chi Tiết Nhà Cung Cấp";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<h2>ChiTietNhaCungCap</h2>
+<div class="container">
+    <h1 class="page-title">@Model.TenNhaCungCap</h1>
 
+    <div class="service-detail">
+        <div class="detail-item">
+            <h4>Thông tin nhà cung cấp</h4>
+            <p><strong>Địa chỉ:</strong> @Model.DiaChiNhaCungCap</p>
+            <p><strong>Số điện thoại:</strong> @Model.SoDienThoaiNhaCungCap</p>
+            <p><strong>Email:</strong> @Model.EmailNhaCungCap</p>
+        </div>
+    </div>
+
+    <div class="back-button">
+        <a href="@Url.Action("Index", "NhaCungCap")" class="btn-back">Quay lại danh sách nhà cung cấp</a>
+    </div>
+</div>
+
+<style>
+   
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: #f8f9fa;
+    }
+
+  
+    .page-title {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 30px;
+    }
+
+    .service-detail {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+    }
+
+    .detail-item h4 {
+        font-size: 22px;
+        color: #34495e;
+        margin-bottom: 15px;
+    }
+
+    .detail-item p {
+        font-size: 16px;
+        color: #7f8c8d;
+        margin-bottom: 10px;
+    }
+
+    .back-button {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .btn-back {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #000;
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-back:hover {
+            background-color: #555;
+        }
+</style>

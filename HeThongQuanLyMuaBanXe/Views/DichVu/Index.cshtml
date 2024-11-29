@@ -53,7 +53,7 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
             margin-bottom: 30px;
-            min-height: 380px; 
+            min-height: 380px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -80,16 +80,15 @@
             flex-grow: 1;
         }
 
-      
         .service-info h3 {
             font-size: 1rem;
             color: #f39c12;
             font-weight: bold;
-            white-space: nowrap; 
+            white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            height: 50px; 
-            line-height: 50px; 
+            height: 50px;
+            line-height: 50px;
         }
 
         .service-info p {
@@ -99,7 +98,7 @@
         }
 
         .btn {
-            display: block; 
+            display: block;
             padding: 10px 20px;
             font-size: 1rem;
             text-transform: uppercase;
@@ -108,7 +107,7 @@
             color: #fff;
             border-radius: 5px;
             transition: background-color 0.3s;
-            margin: 20px auto 0;  
+            margin: 20px auto 0;
         }
 
         .btn:hover {
@@ -125,7 +124,7 @@
         .col-md-4 {
             flex: 1 1 calc(33.333% - 20px);
             box-sizing: border-box;
-            min-width: 300px; 
+            min-width: 300px;
         }
 
         @@media (max-width: 768px) {
@@ -142,6 +141,58 @@
             margin-top: 40px;
         }
 
+        .search-box {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .search-box input {
+            padding: 10px;
+            font-size: 1rem;
+            width: 80%;
+            max-width: 500px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-box button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #f39c12;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background-color: #e67e22;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .pagination a {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #f39c12;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .pagination a:hover {
+            background-color: #f39c12;
+            color: #fff;
+        }
+
+        .pagination .active {
+            background-color: #f39c12;
+            color: #fff;
+        }
+
     </style>
 </head>
 
@@ -151,6 +202,15 @@
     </section>
 
     <div class="container">
+      
+        <div class="search-box">
+            <form method="get" action="@Url.Action("Index", "DichVu")">
+                <input type="text" name="search" placeholder="Tìm kiếm dịch vụ..." value="@ViewBag.SearchTerm" />
+                <button type="submit">Tìm kiếm</button>
+            </form>
+        </div>
+
+      
         <div class="row">
             @foreach (var ThongTinDichVu in Model)
             {
@@ -167,10 +227,24 @@
                 </div>
             }
         </div>
-    </div>
 
-    <footer>
-        <p>&copy; 2024 Hệ Thống Quản Lý Mua Bán Xe. Tất cả quyền được bảo vệ.</p>
-    </footer>
+   
+        <div class="pagination">
+            @if (ViewBag.CurrentPage > 1)
+            {
+                <a href="@Url.Action("Index", "DichVu", new { trang = ViewBag.CurrentPage - 1, search = ViewBag.SearchTerm })"><<</a>
+            }
+
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <a href="@Url.Action("Index", "DichVu", new { trang = i, search = ViewBag.SearchTerm })" class="@(i == ViewBag.CurrentPage ? "active" : "")">@i</a>
+            }
+
+            @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+            {
+                <a href="@Url.Action("Index", "DichVu", new { trang = ViewBag.CurrentPage + 1, search = ViewBag.SearchTerm })">>></a>
+            }
+        </div>
+    </div>
 </body>
 </html>
