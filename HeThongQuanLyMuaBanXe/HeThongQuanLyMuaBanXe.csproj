@@ -333,11 +333,17 @@
     <Compile Include="Migrations\202411290204376_DeleteSomeModel.Designer.cs">
       <DependentUpon>202411290204376_DeleteSomeModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411291112131_AddNhaCCAndTTDV.cs" />
+    <Compile Include="Migrations\202411291112131_AddNhaCCAndTTDV.Designer.cs">
+      <DependentUpon>202411291112131_AddNhaCCAndTTDV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CompanyDbContext.cs" />
     <Compile Include="Models\Favourite.cs" />
     <Compile Include="Models\HopDongMuaBan.cs" />
+    <Compile Include="Models\NhaCungCap.cs" />
     <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\ThongTinDichVu.cs" />
     <Compile Include="Models\Xe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -431,6 +437,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411290204376_DeleteSomeModel.resx">
       <DependentUpon>202411290204376_DeleteSomeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411291112131_AddNhaCCAndTTDV.resx">
+      <DependentUpon>202411291112131_AddNhaCCAndTTDV.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

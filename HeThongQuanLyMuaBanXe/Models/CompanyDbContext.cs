@@ -9,6 +9,8 @@ namespace HeThongQuanLyMuaBanXe.Models
     {
         public CompanyDbContext() : base("MyCS") { }
         public DbSet<Xe> Xes { get; set; }
+        public DbSet<NhaCungCap> NhaCungCaps { get; set; }
+        public DbSet<ThongTinDichVu> ThongTinDichVus { get; set; }
         public DbSet<HopDongMuaBan> HopDongMuaBans { get; set; }
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<Favourite> Favourites {  get; set; }
