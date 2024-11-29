@@ -269,6 +269,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FavouriteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HopDongController.cs" />
     <Compile Include="Controllers\NhanVienController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\XeController.cs" />
@@ -308,16 +309,23 @@
     <Compile Include="Migrations\202411281659009_AdjustMaNhanVienToString.Designer.cs">
       <DependentUpon>202411281659009_AdjustMaNhanVienToString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411290200196_AdjustModelHopDong.cs" />
+    <Compile Include="Migrations\202411290200196_AdjustModelHopDong.Designer.cs">
+      <DependentUpon>202411290200196_AdjustModelHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411290202349_DeleteForeignKey.cs" />
+    <Compile Include="Migrations\202411290202349_DeleteForeignKey.Designer.cs">
+      <DependentUpon>202411290202349_DeleteForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411290204376_DeleteSomeModel.cs" />
+    <Compile Include="Migrations\202411290204376_DeleteSomeModel.Designer.cs">
+      <DependentUpon>202411290204376_DeleteSomeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CompanyDbContext.cs" />
     <Compile Include="Models\Favourite.cs" />
-    <Compile Include="Models\HoaDonBanHang.cs" />
     <Compile Include="Models\HopDongMuaBan.cs" />
-    <Compile Include="Models\KhachHang.cs" />
-    <Compile Include="Models\NhaCungCap.cs" />
     <Compile Include="Models\NhanVien.cs" />
-    <Compile Include="Models\PhieuNhapKho.cs" />
-    <Compile Include="Models\PhieuXuatKho.cs" />
     <Compile Include="Models\Xe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -367,6 +375,8 @@
     <Content Include="Views\Xe\Create.cshtml" />
     <Content Include="Views\Xe\Delete.cshtml" />
     <Content Include="Views\Xe\Edit.cshtml" />
+    <Content Include="Views\HopDong\Index.cshtml" />
+    <Content Include="Views\HopDong\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -398,6 +408,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411281659009_AdjustMaNhanVienToString.resx">
       <DependentUpon>202411281659009_AdjustMaNhanVienToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411290200196_AdjustModelHopDong.resx">
+      <DependentUpon>202411290200196_AdjustModelHopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411290202349_DeleteForeignKey.resx">
+      <DependentUpon>202411290202349_DeleteForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411290204376_DeleteSomeModel.resx">
+      <DependentUpon>202411290204376_DeleteSomeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

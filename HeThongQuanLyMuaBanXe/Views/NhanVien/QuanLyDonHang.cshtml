@@ -6,7 +6,6 @@
 
 @{
     var hopDongList = ViewBag.HopDongList as List<HeThongQuanLyMuaBanXe.Models.HopDongMuaBan>;
-    var khachHangList = ViewBag.KhachHangList as List<HeThongQuanLyMuaBanXe.Models.KhachHang>;
 }
 
 @model IEnumerable<HeThongQuanLyMuaBanXe.Models.HopDongMuaBan>
@@ -37,27 +36,25 @@
                         @foreach (var item in Model)
                         {
 
-                            var khachHang = khachHangList.FirstOrDefault(k => k.MaKhachHang == item.MaKhachHang);
-
                             <tr>
                                 <td>@item.MaHopDong</td>
 
                                 <td>
-                                    <input type="text" name="HoTenKhachHang" value="@(khachHang != null ? khachHang.HoTenKhachHang : "Không tìm thấy")" />
+                                    <input type="text" name="HoTenKhachHang" value="@(item != null ? item.HoTenKhachHang : "Không tìm thấy")" />
                                 </td>
 
                                 <!-- Số điện thoại  -->
                                 <td>
-                                    <input type="text" name="SoDienThoaiKhachHang" value="@(khachHang != null ? khachHang.SoDienThoaiKhachHang : "Không tìm thấy")" />
+                                    <input type="text" name="SoDienThoaiKhachHang" value="@(item != null ? item.SoDienThoaiKhachHang : "Không tìm thấy")" />
                                 </td>
 
                                 <!-- Email  -->
                                 <td>
-                                    <input type="email" name="EmailKhachHang" value="@(khachHang != null ? khachHang.EmailKhachHang : "Không tìm thấy")" />
+                                    <input type="email" name="EmailKhachHang" value="@(item != null ? item.EmailKhachHang : "Không tìm thấy")" />
                                 </td>
 
                                 <!-- Địa chỉ  -->
-                                <td>@khachHang.DiaChiKhachHang</td>
+                                <td>@item.DiaChiKhachHang</td>
                                 <td>@item.MaXe</td>
                                 <td>@item.NgayLapHopDong</td>
                                 <td>@item.TongGiaTriHopDong</td>
@@ -70,7 +67,7 @@
                                     }
                                     else
                                     {
-                                        <button class="btn btn-warning" onclick="changeStatus('@item.MaHopDong', 'Chưa phê duyệt')">Chưa duyệt</button>
+                                        <button class="btn btn-warning" onclick="changeStatus('@item.MaHopDong', 'Chưa phê duyệt')">Hủy</button>
                                     }
                                 </td>
 

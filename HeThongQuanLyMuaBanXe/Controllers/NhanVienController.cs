@@ -38,9 +38,7 @@ namespace HeThongQuanLyMuaBanXe.Controllers
         public ActionResult QuanLyDonHang()
         {
             var hopDongList = db.HopDongMuaBans.ToList();
-            var khachHangList = db.KhachHangs.ToList();
             ViewBag.HopDongList = hopDongList;
-            ViewBag.KhachHangList = khachHangList;
             return View(hopDongList);
         }
         [HttpPost]

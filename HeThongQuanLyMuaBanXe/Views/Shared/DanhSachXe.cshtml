@@ -5,7 +5,7 @@
         @foreach (var product in Model)
         {
             <div class="product-item" style="flex-basis: calc(100% / 4 - 20px); border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
-                <a href="@Url.Action("ChiTietSanPham", "Home", new { id = product.MaXe })" style="text-decoration: none; color: inherit;">
+                <a href="@Url.Action("ChiTietSanPham", "Xe", new { id = product.MaXe })" style="text-decoration: none; color: inherit;">
 
                     <img src="~/Images/@product.HinhAnh" alt="@product.TenXe" style="width: 100%; height: 180px; object-fit: cover;">
                     <div style="padding: 15px;">

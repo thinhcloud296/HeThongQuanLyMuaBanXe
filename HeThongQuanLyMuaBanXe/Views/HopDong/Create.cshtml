@@ -1,0 +1,174 @@
+﻿@model HeThongQuanLyMuaBanXe.Models.HopDongMuaBan
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<h1 class="h1 text-center">THÔNG TIN HỢP ĐỒNG ĐÃ THANH TOÁN</h1>
+<form>
+
+    <div>
+        <label for="HoTenKhachHang">Họ tên:</label>
+        <input type="text" id="HoTenKhachHang" name="HoTenKhachHang" value="@Model.HoTenKhachHang" readonly />
+    </div>
+    <div>
+        <label for="DiaChiKhachHang">Địa chỉ:</label>
+        <input type="text" id="DiaChiKhachHang" name="DiaChiKhachHang" value="@Model.DiaChiKhachHang" readonly />
+    </div>
+    <div>
+        <label for="SoDienThoaiKhachHang">Số điện thoại:</label>
+        <input type="text" id="SoDienThoaiKhachHang" name="SoDienThoaiKhachHang"value="@Model.SoDienThoaiKhachHang" readonly />
+    </div>
+    <div>
+        <label for="MaKhachHang">Địa chỉ Email:</label>
+        <input type="text" id="EmailKhachHang" name="EmailKhachHang"value="@Model.EmailKhachHang" readonly />
+    </div>
+
+    <div>
+        <label for="NgayLapHopDong">Ngày lập hợp đồng:</label>
+        <input type="text" id="NgayLapHopDong" name="NgayLapHopDong" value="@DateTime.Now" readonly />
+    </div>
+    <div>
+        <label for="DieuKhoanHopDong">Điều khoản hợp đồng:</label>
+        <textarea id="DieuKhoanHopDong" name="DieuKhoanHopDong" rows="10" readonly>
+        1. Thông tin xe:
+            - Tên xe: @ViewBag.TenXe
+            - Mã xe: @Model.MaXe
+            - Màu sắc: @ViewBag.MauSac
+
+        2. Giá bán và phương thức thanh toán:  
+            - Giá bán: @ViewBag.GiaBan
+            - Mức thuế VAT: 10% giá trị bán của xe.
+            - Thuế nhập khẩu:70% giá trị bán của xe.
+            - Thuế tiêu thụ đặc biệt (TTĐB):60% giá trị bán của xe.
+            - Phí trước bạ:10% giá trị xe
+            - Tiền đặt cọc: [20% GIÁ TRỊ CỦA XE]
+            - Phương thức thanh toán:
+                - Thanh toán một lần
+                - Trả góp: Nếu khách hàng chọn phương thức trả góp, vui lòng cung cấp các thông tin chi tiết về kỳ hạn trả góp, lãi suất, và số tiền mỗi tháng.
+
+        3. Thời gian giao xe:
+            - Thời gian giao xe: Xe sẽ sẵn sàng bàn giao trong vòng [1-2 ngày] kể từ khi thanh toán xong.
+            - Địa điểm giao xe: Nhận xe trực tiếp tại cửa hàng hoặc được vận chuyển theo yêu cầu
+
+        4. Bảo hành và bảo dưỡng:
+            - Bảo hành: Xe sẽ được bảo hành theo chính sách của nhà sản xuất.
+            - Chi phí bảo dưỡng: Đại lý cung cấp dịch vụ bảo dưỡng định kỳ theo yêu cầu của hãng.
+
+        5. Chính sách đổi trả và hủy hợp đồng:
+            - Đổi trả: Trong vòng [24H], khách hàng có quyền đổi trả xe nếu có bất kì lỗi nào từ nhà sản xuất.
+            - Hủy hợp đồng: Khách hàng có thể hủy hợp đồng trong vòng [24H] sau khi ký kết.
+
+        6. Trách nhiệm của các bên:
+            - Trách nhiệm của đại lý: Đảm bảo chất lượng xe đúng như cam kết.
+            - Trách nhiệm của khách hàng: Thanh toán đầy đủ đúng thời gian quy định.
+
+        7. Giải quyết tranh chấp:
+            - Tranh chấp sẽ được giải quyết qua thương lượng, nếu không thành công sẽ đưa ra tòa án có thẩm quyền.
+
+        8. Điều khoản khác:
+            - Hợp đồng có hiệu lực ngay khi ký kết.
+    </textarea>
+    </div>
+    <div>
+        <label for="TongGiaTriHopDong">Tổng giá trị hợp đồng:</label>
+        <input type="text" id="TongGiaTriHopDong" name="TongGiaTriHopDong"
+               value="@Model.TongGiaTriHopDong.ToString()" readonly />
+    </div>
+    <div>
+        <label for="TrangThaiHopDong">Trạng thái hợp đồng:</label>
+        <input type="text" id="TrangThaiHopDong" name="TrangThaiHopDong" value="Chưa duyệt" readonly />
+    </div>
+    <div class="d-flex justify-content-center">
+        <a href="/home/index" style="text-decoration:none;" class="btn1 btn-success w-100 text-center">Thanh Toán Thành Công</a>
+    </div>
+</form>
+<style>
+    /* Cấu trúc cơ bản */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        text-align: center;
+        color: #007BFF;
+        margin-bottom: 20px;
+    }
+
+    form {
+        width: 70%;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    /* Các input và textarea */
+    input[type="text"], textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    /* Đặt kiểu cho label */
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+        color: #555;
+    }
+
+    /* Phần điều khoản hợp đồng */
+    textarea {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        resize: vertical;
+        min-height: 150px;
+    }
+
+    /* Nút submit */
+    .btn1 {
+        background-color: #28a745;
+        color: white;
+        font-size: 16px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s;
+    }
+
+
+    /* Phần form detail hợp đồng */
+    form div {
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        display: none !important;
+    }
+
+    .form-control {
+        display: none !important;
+    }
+
+    .box-first-footer {
+        width: 100%;
+        height: 330px;
+        padding: 55px 15px 45px 15px;
+        background-color: #000000;
+        border-bottom: 1px solid rgb(204, 202, 202);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
