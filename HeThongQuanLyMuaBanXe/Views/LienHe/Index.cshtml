@@ -8,19 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Liên Hệ</title>
 
-    <!-- External CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #121212;
-            color: #fff;
+            background-color: #ffffff; 
+            color: #000000; 
         }
 
         .hero {
@@ -43,9 +43,9 @@
         }
 
         .contact-form .form-control {
-            background-color: #333;
-            border: 1px solid #555;
-            color: #fff;
+            background-color: #f8f8f8; 
+            border: 1px solid #ddd;
+            color: #000;
         }
 
         .btn-primary {
@@ -53,51 +53,20 @@
             border-color: #f39c12;
         }
 
-        /* Gallery & Blog */
-        .gallery-img, .blog-section img {
-            max-height: 500px;
-            object-fit: cover;
-            transition: all 0.3s ease-in-out;
+        .btn-block {
+            text-align: center;
         }
 
-        .gallery-img:hover, .blog-section img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Footer */
-        footer .social-icons a {
-            color: #fff;
+      
+        .social-icons li {
             margin: 0 15px;
-            font-size: 1.8rem;
-            transition: color 0.3s ease;
         }
 
-        footer .social-icons a:hover {
-            color: #f39c12;
-            transform: scale(1.2);
-        }
-
-        /* Fade In */
-        .fade-in {
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        @@keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Info Cards */
         .info-card {
-            background: #1e1e1e;
+            background: #f8f8f8;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .info-card:hover {
-            transform: translateY(-10px);
         }
 
         .info-card .icon {
@@ -105,30 +74,15 @@
             color: #f39c12;
         }
 
-        /* Testimonials */
-        .testimonial-section {
-            background-color: #1e1e1e;
-            padding: 50px 0;
+        footer .social-icons a {
+            color: #000;
+            font-size: 1.8rem;
+            transition: color 0.3s ease;
         }
 
-        .testimonial-card {
-            background-color: #333;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Event Cards */
-        .event-card {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .event-card:hover {
-            transform: scale(1.05);
+        footer .social-icons a:hover {
+            color: #f39c12;
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -143,13 +97,36 @@
 
     <section class="container py-5" data-aos="zoom-in-up">
         <div class="row">
-            <!-- Contact Information -->
+       
             <div class="col-md-4 mb-5 mb-md-0" data-aos="fade-right" data-aos-delay="200">
                 <h3 class="text-uppercase mb-4">Thông tin liên hệ</h3>
                 <ul class="list-unstyled contact-info">
-                    <li><strong>Địa chỉ:</strong> 140 Lê Trọng Tấn, Tân Phú, Việt Nam</li>
-                    <li><strong>Điện thoại:</strong> <a href="tel:+1112223334">+ 111 222 334</a></li>
-                    <li><strong>Email:</strong> <a href="mailto:info@gmail.com">car@supercar.com</a></li>
+                    <h4 class="text-uppercase mt-4">Nhân viên hỗ trợ</h4>
+                    <div class="card-container">
+                        <div class="info-card">
+                            <div class="d-flex align-items-center">
+                                <div class="icon"><i class="bi bi-person-circle"></i></div>
+                                <div class="ml-3">
+                                    <h5>Nguyễn Hoàng Thịnh</h5>
+                                    <p>Phòng Kinh Doanh</p>
+                                    <p><strong>Điện thoại:</strong> 02001224963</p>
+                                    <p><strong>Email:</strong> <a href="mailto:hoangthinh@car.com">hoangthinh@car.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="d-flex align-items-center">
+                                <div class="icon"><i class="bi bi-person-circle"></i></div>
+                                <div class="ml-3">
+                                    <h5>Trần Tấn Tài</h5>
+                                    <p>Hỗ trợ qua Zalo</p>
+                                    <p><strong>Điện thoại:</strong> 02001224207</p>
+                                    <p><strong>Email:</strong> <a href="mailto:tantai@car.com">tantai@car.com</a></p>
+                                    <p><strong>Chat Zalo:</strong> <a href="https://wa.me/02001224207" target="_blank">Chat Zalo</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </ul>
                 <h4 class="text-uppercase mt-4">Kết nối với chúng tôi</h4>
                 <ul class="list-unstyled d-flex social-icons">
@@ -159,7 +136,7 @@
                 </ul>
             </div>
 
-            <!-- Contact Form -->
+         
             <div class="col-md-8" data-aos="fade-left" data-aos-delay="400">
                 <h3 class="mb-4 text-uppercase">Gửi chúng tôi thông điệp</h3>
                 <form class="contact-form">
@@ -175,13 +152,24 @@
                         <label for="message">Tin nhắn</label>
                         <textarea class="form-control" id="message" rows="4" placeholder="Nhập tin nhắn của bạn"></textarea>
                     </div>
+
                     <button type="submit" class="btn btn-primary btn-block mt-3">Gửi thông điệp</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 20px 0; background-color: #121212;">
+
+
+  
+    <section class="container py-5" data-aos="fade-up">
+        <h2 class="text-center text-black mb-5">Địa Chỉ Văn Phòng</h2>
+        <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 20px 0; background-color: #f8f8f8;">
         <ul class="list-unstyled d-flex justify-content-center social-icons">
             <li><a href="#" class="animate__animated animate__flipInX"><i class="bi bi-twitter"></i></a></li>
             <li><a href="#" class="animate__animated animate__flipInX"><i class="bi bi-facebook"></i></a></li>
@@ -189,15 +177,7 @@
         </ul>
     </footer>
 
-    <!-- Map Section -->
-    <section class="container py-5" data-aos="fade-up">
-        <h2 class="text-center text-white mb-5">Địa Chỉ Văn Phòng</h2>
-        <div class="map-responsive">
-            <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </section>
-
-    <!-- Scripts -->
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
