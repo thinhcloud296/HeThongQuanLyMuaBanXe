@@ -171,8 +171,9 @@
         }
 
         .pagination {
-            text-align: center;
-            margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
         }
 
         .pagination a {
@@ -181,6 +182,8 @@
             color: #f39c12;
             text-decoration: none;
             margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .pagination a:hover {
@@ -232,7 +235,7 @@
         <div class="pagination">
             @if (ViewBag.CurrentPage > 1)
             {
-                <a href="@Url.Action("Index", "DichVu", new { trang = ViewBag.CurrentPage - 1, search = ViewBag.SearchTerm })"><<</a>
+                <a href="@Url.Action("Index", "DichVu", new { trang = ViewBag.CurrentPage - 1, search = ViewBag.SearchTerm })">trước</a>
             }
 
             @for (int i = 1; i <= ViewBag.TotalPages; i++)
@@ -242,7 +245,7 @@
 
             @if (ViewBag.CurrentPage < ViewBag.TotalPages)
             {
-                <a href="@Url.Action("Index", "DichVu", new { trang = ViewBag.CurrentPage + 1, search = ViewBag.SearchTerm })">>></a>
+                <a href="@Url.Action("Index", "DichVu", new { trang = ViewBag.CurrentPage + 1, search = ViewBag.SearchTerm })">tiếp</a>
             }
         </div>
     </div>
